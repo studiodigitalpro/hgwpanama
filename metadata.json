@@ -1,0 +1,6 @@
+{
+  "name": "HGW Tienda Online & Membresías",
+  "description": "Tienda online y catálogo interactivo de productos de salud, bienestar y membresías HGW (Health Green World) Panamá.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,1360 @@
+import { Product } from '../types';
+
+export const productsData: Product[] = [
+  {
+    id: 1458,
+    type: 'simple',
+    name: 'Paquete Master 600 BV',
+    category: 'MEMBRESIAS HGW',
+    subcategories: ['Membresías', 'Negocio'],
+    price: 1100.0,
+    regularPrice: 1100.0,
+    bv: 600,
+    shortDescription:
+      'La membresía de mayor nivel de HGW, diseñada para emprendedores que desean maximizar sus ingresos y acceder a todos los beneficios del Plan de Compensación con hasta 60% de ganancia en recompras y tope de $720 diarios.',
+    advantages: [
+      '30% de descuento en activación y hasta 60% en recompra.',
+      'Tope diario de ganancia de hasta USD $720 diarios en Bono de Equipo.',
+      'Acceso al Bono Élite hasta la 6ta generación (4%).',
+      'Bono de Desarrollo de USD $3.00 hasta 10 niveles.',
+      'Plazo de hasta 180 días para completar los 600 BV.',
+      'Libertad de combinar y elegir productos de tu preferencia.',
+      'Acceso a viajes nacionales, internacionales, cruceros, Bono Casa y Bono Auto.',
+    ],
+    benefits: [
+      {
+        title: 'Máximo Retorno de Inversión',
+        description: 'Obtén el mayor porcentaje de ganancias del plan y un camino acelerado hacia los rangos Diamante.',
+      },
+      {
+        title: 'Plan de Ganancia Mutua 50/50',
+        description: 'Las ganancias se distribuyen 50% para ti y 50% con tu patrocinador y patrocinados en niveles infinitos.',
+      },
+      {
+        title: 'Recompra Mínima Baja',
+        description: 'Mantente activo con solo 10 BV mensuales (~USD $17 - $25) sin importar el tamaño de tu red.',
+      },
+    ],
+    presentation: 'Activación con 1 compra de 600 BV o 6 compras de 100 BV (plazo 180 días).',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/PRODUCTOS-HGW.png',
+    featured: true,
+    tags: ['Membresía', 'Master', 'Negocio', 'Liderazgo'],
+  },
+  {
+    id: 1460,
+    type: 'simple',
+    name: 'Paquete Senior 300 BV',
+    category: 'MEMBRESIAS HGW',
+    subcategories: ['Membresías', 'Negocio'],
+    price: 560.0,
+    regularPrice: 728.0,
+    bv: 300,
+    shortDescription:
+      'Diseñado para quienes desean desarrollar un negocio con alto potencial de ingresos. 30% de descuento en compras y recompras, acceso al Bono Élite hasta 3 generaciones y tope de $360 diarios.',
+    advantages: [
+      '30% de descuento en compras y recompras.',
+      'Bono de Equipo 8% con tope de USD $360 diarios.',
+      'Bono Élite 4% hasta 3 generaciones.',
+      'Bono de Desarrollo de USD $1.50 hasta 10 niveles.',
+      'Activación flexible con 1 compra de 300 BV, 3 de 100 BV o 6 de 50 BV.',
+      'Acceso directo a la carrera de liderazgo hacia Plata, Oro, Platino y Diamante.',
+    ],
+    benefits: [
+      {
+        title: 'Crecimiento con Niveles Infinitos',
+        description: 'Expansión de red con beneficios directos del Bono de Equipo y Ganancia Mutua.',
+      },
+      {
+        title: 'Participación en Red',
+        description: 'Participación en la red de tu patrocinador hasta 10 niveles.',
+      },
+    ],
+    presentation: 'Inversión de USD $560 – $600 en productos a libre elección.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/PRODUCTOS-HGW.png',
+    featured: true,
+    tags: ['Membresía', 'Senior', 'Negocio'],
+  },
+  {
+    id: 1461,
+    type: 'external',
+    name: 'Paquete Junior 100 BV',
+    category: 'MEMBRESIAS HGW',
+    subcategories: ['Membresías', 'Negocio'],
+    price: 180.0,
+    regularPrice: 241.0,
+    bv: 100,
+    externalUrl: 'https://www.healthgreenworld.com/?userName=Yamilka507',
+    buttonText: 'ACTIVARSE AQUI',
+    shortDescription:
+      'Membresía intermedia ideal para iniciar con mayores ventajas. 30% de descuento en compras, 7% en bono de equipo con tope de $120 diarios y Bono de Desarrollo de $0.50.',
+    advantages: [
+      '30% de descuento permanente en productos.',
+      'Activación con 1 compra de 100 BV o 2 compras de 50 BV.',
+      'Bono de Equipo 7% con tope diario de USD $120.',
+      'Bono de Desarrollo USD $0.50 hasta 10 niveles.',
+      'Posibilidad de ascender progresivamente a Master (600 BV) en 180 días.',
+    ],
+    benefits: [
+      {
+        title: 'Mayor Porcentaje de Ganancias',
+        description: 'Supera los porcentajes de Prejunior e inicia el apalancamiento en la red.',
+      },
+    ],
+    presentation: 'Inversión de USD $180 – $200 en productos a libre elección.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/PRODUCTOS-HGW.png',
+    featured: true,
+    tags: ['Membresía', 'Junior', 'Emprendimiento'],
+  },
+  {
+    id: 1462,
+    type: 'external',
+    name: 'Paquete Prejunior 50 BV',
+    category: 'MEMBRESIAS HGW',
+    subcategories: ['Membresías', 'Negocio'],
+    price: 96.0,
+    regularPrice: 138.0,
+    bv: 50,
+    externalUrl: 'https://www.healthgreenworld.com/?userName=Yamilka507',
+    buttonText: 'ACTIVARSE AQUI',
+    shortDescription:
+      'La membresía ideal para iniciar tu negocio independiente en HGW con baja inversión. 30% de descuento en activación y recompras, 5% en Bono de Equipo y acceso a Ganancia Mutua.',
+    advantages: [
+      'Baja inversión inicial (~USD $89 - $100).',
+      '30% de descuento en compra de activación y recompras.',
+      'Participación en la red de tu patrocinador hasta 10 niveles.',
+      'Bono de Equipo 5% con tope de USD $50 diarios.',
+      'Bono de Desarrollo USD $0.20 hasta 10 niveles.',
+      'Crecimiento gradual para ascender hasta membresía Master.',
+    ],
+    benefits: [
+      {
+        title: 'Entrada Accesible al Negocio',
+        description: 'Comienza a generar ingresos por ventas y construcción de equipo con consumo diario de productos.',
+      },
+    ],
+    presentation: 'Inversión de USD $89 – $100 en productos a libre elección.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/PRODUCTOS-HGW.png',
+    tags: ['Membresía', 'Prejunior', 'Inicio Rápido'],
+  },
+  {
+    id: 1463,
+    type: 'simple',
+    name: 'PASTA DENTAL DE TURMALINA (Versión Blanca)',
+    category: 'Cuidado personal',
+    subcategories: ['Higiene bucal', 'Turmalina'],
+    price: 8.0,
+    shortDescription:
+      'Pasta dental formulada con turmalina, menta y extractos vegetales tradicionales. Libre de flúor y triclosán, combate el mal aliento, reduce la placa bacteriana y promueve una salud oral superior.',
+    advantages: [
+      'Fórmula 100% libre de flúor y libre de triclosán.',
+      'Potente frescura natural a menta duradera.',
+      'Cuidadosamente formulada con hierbas tradicionales chinas.',
+      'Libera iones negativos que reducen la adhesión de la placa dental.',
+      'Ayuda a reducir inflamación y sangrado de encías.',
+    ],
+    benefits: [
+      {
+        title: 'Péptidos de Soya',
+        description: 'Destruyen membranas bacterianas e inhiben patógenos orales de manera natural.',
+      },
+      {
+        title: 'Xilitol y Cardenólidos',
+        description: 'Inhiben bacterias cariogénicas, reducen la erosión ácida y estimulan la saliva.',
+      },
+      {
+        title: 'Extracto de Regaliz y Diente de León',
+        description: 'Efecto antiinflamatorio que reduce enrojecimiento y alivia el sangrado gingival.',
+      },
+    ],
+    usageInstructions: [
+      'Cepille sus dientes al menos tres veces al día o después de cada comida.',
+      'Aplique una cantidad adecuada sobre su cepillo dental.',
+      'Realice una limpieza profunda en dientes, encías y lengua durante 2 a 3 minutos.',
+      'Enjuague con abundante agua.',
+    ],
+    presentation: 'Tubo de 120 gramos.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Pasta-dental-con-turmalina-blanca.jpg',
+    featured: true,
+    tags: ['Sin Flúor', 'Turmalina', 'Cuidado Bucal', 'Natural'],
+  },
+  {
+    id: 1465,
+    type: 'simple',
+    name: 'TOURMALINE TOOTHPASTE (Versión Negra)',
+    category: 'Cuidado personal',
+    subcategories: ['Higiene bucal', 'Turmalina', 'Blanqueamiento'],
+    price: 8.0,
+    shortDescription:
+      'Pasta dental de turmalina negra para limpieza profunda, remoción suave de manchas y blanqueamiento natural sin dañar el esmalte ni químicos agresivos.',
+    advantages: [
+      'Libre de flúor y triclosán.',
+      'Abrasión suave y natural con partículas de turmalina negra.',
+      'Blanqueamiento natural y remoción de placa.',
+      'Fortalece encías y esmalte con extracto de Madreselva y Bletilla striata.',
+      'Frescura intensa y prolongada a menta.',
+    ],
+    benefits: [
+      {
+        title: 'Limpieza Profunda & Desmanchado',
+        description: 'Remueve manchas superficiales de café, té o alimentos sin agredir el esmalte.',
+      },
+      {
+        title: 'Madreselva & Bletilla Striata',
+        description: 'Hierbas ancestrales con alta potencia antibacteriana y regeneradora de tejidos bucales.',
+      },
+    ],
+    usageInstructions: [
+      'Cepillar dientes y encías de 2 a 3 veces por día tras cada comida.',
+      'Enjuagar con abundante agua limpia.',
+    ],
+    presentation: 'Tubo de 120 gramos.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Pasta-dental-con-turmalina-negra.jpg',
+    tags: ['Blanqueamiento', 'Turmalina Negra', 'Sin Flúor'],
+  },
+  {
+    id: 1467,
+    type: 'simple',
+    name: 'Pasta dental con Probióticos',
+    category: 'Cuidado personal',
+    subcategories: ['Higiene bucal', 'Probióticos'],
+    price: 8.0,
+    shortDescription:
+      'Higiene bucal avanzada con lisados de Lactobacillus y compuestos de fermentación láctica. Restablece y equilibra la microbiota oral para una defensa natural completa.',
+    advantages: [
+      'Fórmula con lisado de Lactobacillus bioactivo.',
+      'Libre de flúor y triclosán.',
+      'Apta para toda la familia: niños, adultos, embarazadas y adultos mayores.',
+      'Estimula la inmunidad natural de la mucosa bucal.',
+      'Protege contra bacterias formadoras de sarro y mal aliento.',
+    ],
+    benefits: [
+      {
+        title: 'Microbiota Oral Equilibrada',
+        description: 'Genera un entorno no propicio para bacterias patógenas, reforzando la salud periodontal.',
+      },
+      {
+        title: 'Antioxidante y Calmante',
+        description: 'Protege las encías del estrés oxidativo e inflamaciones recurrentes.',
+      },
+    ],
+    usageInstructions: [
+      'Aplicar sobre el cepillo y cepillar dientes, encías y lengua por 2 a 3 minutos dos veces al día.',
+    ],
+    presentation: 'Tubo de 120 gramos.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Pasta-dental-con-probioticos-HGW.jpg',
+    tags: ['Probióticos', 'Lactobacillus', 'Sin Flúor', 'Cuidado Bucal'],
+  },
+  {
+    id: 1469,
+    type: 'simple',
+    name: 'Herbal Fresh Candy',
+    category: 'Alimentos',
+    subcategories: ['SERIE CANDY HGW', 'Caramelos funcionales'],
+    price: 5.8,
+    shortDescription:
+      'Caramelo duro funcional con agradable sabor floral a Flor de Camelia y extractos herbales naturales. Refresca el aliento y brinda bienestar en formato de bolsillo.',
+    advantages: [
+      'Delicioso sabor floral a Flor de Camelia.',
+      'Elaborado con extractos herbales de origen natural.',
+      'Formato compacto de bolsillo: fácil de llevar a la oficina, auto o viajes.',
+      'Ideal para consumir después de las comidas o antes de reuniones.',
+    ],
+    benefits: [
+      {
+        title: 'Frescura Instantánea',
+        description: 'Elimina sabores residuales y promueve una sensación limpia y placentera en la boca.',
+      },
+    ],
+    presentation: 'Frasco de 30 g (~60 caramelos duros).',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/HERBAL-FRESH-CANDY-HGW-1.png',
+    tags: ['Caramelos', 'Flor de Camelia', 'Frescura', 'Herbal'],
+  },
+  {
+    id: 1471,
+    type: 'simple',
+    name: 'Peptipro Candy',
+    category: 'Alimentos',
+    subcategories: ['SERIE CANDY HGW', 'Colágeno', 'Belleza'],
+    price: 5.8,
+    shortDescription:
+      'Innovador caramelo duro que combina péptidos de colágeno de alta biodisponibilidad y extracto de ginseng con un agradable sabor herbal para apoyar piel, cabello, uñas y vitalidad.',
+    advantages: [
+      'Contiene péptidos de colágeno de absorción rápida.',
+      'Enriquecido con Ginseng (Panax ginseng) y Rosa mosqueta.',
+      'Sin necesidad de mezclas ni preparaciones.',
+      'Sabor delicioso y energizante.',
+    ],
+    benefits: [
+      {
+        title: 'Nutrición para Piel y Cabello',
+        description: 'Complementa la síntesis diaria de colágeno para mantener elasticidad e hidratación dérmica.',
+      },
+      {
+        title: 'Vitalidad con Ginseng',
+        description: 'Ayuda a disminuir la fatiga y el cansancio ocasional.',
+      },
+    ],
+    presentation: 'Frasco de 30 g (~60 unidades). Sabor Ginseng.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Peptipro-Candy-HGW-scaled-1.png',
+    tags: ['Colágeno', 'Ginseng', 'Caramelos', 'Belleza'],
+  },
+  {
+    id: 1473,
+    type: 'simple',
+    name: 'Gestifruit Candy',
+    category: 'Alimentos',
+    subcategories: ['SERIE CANDY HGW', 'Digestivo'],
+    price: 5.8,
+    shortDescription:
+      'Caramelo duro con vibrante sabor a mandarina enriquecido con vitamina C natural, extracto de espino blanco, hongo melena de león (Hericium erinaceus), ñame silvestre y Fucoidan.',
+    advantages: [
+      'Sabor cítrico vibrante y refrescante a mandarina.',
+      'Aporte natural de vitamina C y antioxidantes.',
+      'Contiene Melena de León, Espino blanco y Fucoidan.',
+      'Apoyo digestivo suave y sensación refrescante.',
+    ],
+    benefits: [
+      {
+        title: 'Sinergia Cítrica & Funcional',
+        description: 'Estimula la digestión saludable y aporta bioactivos reconfortantes para el tracto digestivo.',
+      },
+    ],
+    presentation: 'Frasco de 30 g (~60 unidades). Sabor Mandarina.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Gestifruit-Candy-HGW-scaled-1.png',
+    tags: ['Mandarina', 'Vitamina C', 'Melena de León', 'Digestivo'],
+  },
+  {
+    id: 1475,
+    type: 'simple',
+    name: 'Biolacti Candy',
+    category: 'Alimentos',
+    subcategories: ['SERIE CANDY HGW', 'Probióticos'],
+    price: 5.8,
+    shortDescription:
+      'Caramelo duro enriquecido con cepas probióticas activas (L. acidophilus, B. lactis, S. thermophilus) y sabor a leche descremada para el cuidado y equilibrio de la flora intestinal.',
+    advantages: [
+      'Aporte de probióticos esenciales en formato masticable/disoluble.',
+      'Bajo en azúcares.',
+      'Delicioso y suave sabor a leche descremada.',
+      'Apoyo al bienestar y tránsito digestivo diario.',
+    ],
+    benefits: [
+      {
+        title: 'Equilibrio de la Microbiota',
+        description: 'Favorece las defensas naturales y un microbioma intestinal balanceado.',
+      },
+    ],
+    presentation: 'Frasco de 30 g (~60 unidades). Sabor Leche descremada.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Biolacti-candy-HGW-scaled-1.png',
+    tags: ['Probióticos', 'Digestión', 'Caramelos'],
+  },
+  {
+    id: 1477,
+    type: 'simple',
+    name: 'Blueberry Candy',
+    category: 'Alimentos',
+    subcategories: ['SERIE CANDY HGW', 'Arándanos', 'Visión'],
+    price: 5.8,
+    shortDescription:
+      'Caramelos elaborados con polvo de arándano azul canadiense puro, concentrado en antocianinas protectoras para la salud visual, poder antioxidante y bienestar celular.',
+    advantages: [
+      'Elaborado con arándanos canadienses seleccionados.',
+      'Alto contenido de antocianinas y flavonoides.',
+      'Apoyo a la agudeza y descanso visual.',
+      'Aroma y sabor deliciosamente natural.',
+      'Producto estrella de HGW.',
+    ],
+    benefits: [
+      {
+        title: 'Protección Ocular & Antioxidante',
+        description: 'Las antocianinas de arándano ayudan a proteger la retina frente a pantallas y luz azul.',
+      },
+    ],
+    presentation: 'Frasco de 30 g (60 caramelos). Vida útil 24 meses.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/candy-berry-p-500.png',
+    featured: true,
+    tags: ['Arándanos', 'Visión', 'Antioxidante', 'Producto Estrella'],
+  },
+  {
+    id: 1479,
+    type: 'simple',
+    name: 'Coffee Candy',
+    category: 'Alimentos',
+    subcategories: ['SERIE CANDY HGW', 'SERIE CAFÉS SALUDABLES'],
+    price: 5.8,
+    shortDescription:
+      'Caramelo duro de café y leche descremada. La forma más práctica y deliciosa de obtener energía, enfoque mental y concentración en cualquier lugar.',
+    advantages: [
+      'Gusto auténtico de café en formato caramelo duro.',
+      'Estímulo rápido de concentración para estudio o trabajo.',
+      'Fácil de llevar en el bolso, auto o escritorio.',
+    ],
+    benefits: [
+      {
+        title: 'Impulso de Enfoque y Ánimo',
+        description: 'Combate la somnolencia y fatiga con un toque agradable de cafeína natural.',
+      },
+    ],
+    presentation: 'Frasco de 30 g (~60 caramelos de 0.5 g).',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Coffee-Candy-HGW-scaled-1.png',
+    tags: ['Café', 'Energía', 'Caramelos'],
+  },
+  {
+    id: 1481,
+    type: 'simple',
+    name: 'Moruva Candy',
+    category: 'Alimentos',
+    subcategories: ['SERIE CANDY HGW', 'Moringa', 'Antioxidante'],
+    price: 5.8,
+    shortDescription:
+      'Caramelo duro con la potencia nutricional de la moringa y los polifenoles antioxidantes de la uva. Aporte de fitonutrientes y sabor agradable para toda la familia.',
+    advantages: [
+      'Combinación única de Moringa y Uva.',
+      'Riqueza nutricional y antioxidantes naturales.',
+      'Sabor dulce y refrescante sin sensación pesada.',
+    ],
+    benefits: [
+      {
+        title: 'Nutrientes de Moringa y Resveratrol de Uva',
+        description: 'Apoya los niveles naturales de energía y bienestar celular en tu rutina.',
+      },
+    ],
+    presentation: 'Frasco de 30 g (~60 unidades). Sabor Moringa y Uva.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Moruva-candy-HGW-scaled-1.png',
+    tags: ['Moringa', 'Uva', 'Antioxidante', 'Caramelos'],
+  },
+  {
+    id: 1483,
+    type: 'simple',
+    name: 'Protector Intimo diario con Turmalina',
+    category: 'Cuidado personal',
+    subcategories: ['Higiene femenina', 'Turmalina'],
+    price: 5.0,
+    shortDescription:
+      'Enjoyable Panty Liner HGW: protector diario con banda aniónica de turmalina y suave capa de algodón. Brinda frescura, absorción, equilibrio y confort diario.',
+    advantages: [
+      'Banda aniónica generadora de iones negativos con turmalina.',
+      'Capa superior de suave algodón hipoalergénico.',
+      'Estructura multicapa ultrafina y altamente transpirable.',
+      'Diseño anatómico y discreto para máxima comodidad.',
+    ],
+    benefits: [
+      {
+        title: 'Bienestar Femenino',
+        description: 'Ayuda a prevenir la proliferación de malos olores y humedad manteniendo frescura todo el día.',
+      },
+    ],
+    presentation: 'Paquete de 30 unidades.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Protectores-intimos-HGW.png',
+    tags: ['Cuidado Femenino', 'Turmalina', 'Aniones', 'Algodón'],
+  },
+  {
+    id: 1485,
+    type: 'simple',
+    name: 'Toalla Sanitaria Día con Turmalina',
+    category: 'Cuidado personal',
+    subcategories: ['Higiene femenina', 'Turmalina'],
+    price: 5.0,
+    shortDescription:
+      'Enjoyable Day Use HGW: toalla sanitaria de uso diurno con tecnología de turmalina generadora de aniones, algodón suave, gran capacidad de absorción y diseño seguro.',
+    advantages: [
+      'Banda aniónica de turmalina para mayor higiene y equilibrio.',
+      'Capa de algodón suave y gentil con la piel sensible.',
+      'Núcleo absorbente de alto rendimiento y alas de fijación firme.',
+      'Empaque individual seguro e higiénico.',
+    ],
+    benefits: [
+      {
+        title: 'Protección Diurna Confiable',
+        description: 'Mantiene la piel fresca y seca evitando irritaciones durante las actividades cotidianas.',
+      },
+    ],
+    presentation: 'Paquete de 10 unidades para uso de día.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Toalla-sanitaria-con-turmalina-HGW-uso-dia.png',
+    tags: ['Toallas Sanitarias', 'Uso Día', 'Turmalina', 'Aniones'],
+  },
+  {
+    id: 1487,
+    type: 'simple',
+    name: 'Toalla Sanitaria Noche con Turmalina',
+    category: 'Cuidado personal',
+    subcategories: ['Higiene femenina', 'Turmalina'],
+    price: 4.0,
+    shortDescription:
+      'Enjoyable Night Use HGW: toalla sanitaria nocturna extralarga con banda de turmalina y aniones. Máxima absorción y protección anatómica para un descanso tranquilo.',
+    advantages: [
+      'Longitud extendida para cobertura nocturna completa.',
+      'Banda aniónica con turmalina activa.',
+      'Capa de algodón suave, ultrafina y transpirable.',
+      'Barreras antifugas para dormir sin preocupaciones.',
+    ],
+    benefits: [
+      {
+        title: 'Descanso Tranquilo & Protección',
+        description: 'Absorbe rápidamente el flujo nocturno previniendo manchas y sensación de humedad.',
+      },
+    ],
+    presentation: 'Paquete de 8 unidades para uso de noche.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Toalla-sanitaria-con-turmalina-HGW-uso-nocturno.png',
+    featured: true,
+    tags: ['Toallas Sanitarias', 'Uso Noche', 'Turmalina', 'Producto Estrella'],
+  },
+  {
+    id: 1489,
+    type: 'simple',
+    name: 'Press On Nails / Uñas acrílicas',
+    category: 'Accesorios',
+    subcategories: ['Belleza', 'Manicura'],
+    price: 8.58,
+    shortDescription:
+      'Uñas postizas listas para usar de aplicación rápida en minutos. Diseños modernos y elegantes, reutilizables con el cuidado adecuado sin dañar las uñas naturales.',
+    advantages: [
+      'Aplicación rápida y sencilla en 5 minutos en casa.',
+      'Diseños de tendencia con acabado profesional de salón.',
+      'Reutilizables y resistentes.',
+      'Incluye adhesivos y accesorios básicos.',
+    ],
+    benefits: [
+      {
+        title: 'Manicura Impecable al Instante',
+        description: 'Ahorra tiempo y dinero para eventos, sesiones de fotos o uso cotidiano.',
+      },
+    ],
+    presentation: 'Caja con 30 piezas en diversos tamaños y accesorios.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Press-on-nails-HGW.png',
+    tags: ['Belleza', 'Uñas', 'Press On Nails', 'Accesorios'],
+  },
+  {
+    id: 1491,
+    type: 'simple',
+    name: 'Pen Gel / Bolígrafo HGW',
+    category: 'Accesorios',
+    subcategories: ['Oficina', 'Papelería'],
+    price: 1.43,
+    shortDescription:
+      'Bolígrafo de tinta gel con escritura suave, trazo preciso y diseño ergonómico de la marca HGW. Ideal para trabajo diario, oficina y firmas.',
+    advantages: [
+      'Trazo continuo y fluido sin manchas.',
+      'Diseño ergonómico y liviano.',
+      'Logo distintivo HGW.',
+    ],
+    presentation: '1 unidad.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Pen-Gel.jpg',
+    tags: ['Accesorios', 'Bolígrafo', 'Oficina'],
+  },
+  {
+    id: 1493,
+    type: 'simple',
+    name: 'Mermelada de Arándanos',
+    category: 'Alimentos',
+    subcategories: ['Desayunos', 'Arándanos'],
+    price: 12.0,
+    shortDescription:
+      'Mermelada frutada con alta concentración de arándanos canadienses. De textura suave con trozos de fruta natural, rica en antioxidantes y antocianinas para tus desayunos.',
+    advantages: [
+      'Contiene trozos reales de frutos de arándanos.',
+      'Elaborada de forma tradicional para conservar nutrientes.',
+      'Sabor delicioso y aroma frutal intenso.',
+      'Ideal para tostadas, avena, yogur y postres saludables.',
+    ],
+    benefits: [
+      {
+        title: 'Antocianinas en la Mesa Familiar',
+        description: 'Apoya la salud visual y celular mientras disfrutas de un desayuno dulce y nutritivo.',
+      },
+    ],
+    presentation: 'Frasco de 200 g. Vida útil: 12 meses.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/mermelada-p-500.png',
+    tags: ['Mermelada', 'Arándanos', 'Desayuno', 'Antioxidante'],
+  },
+  {
+    id: 1495,
+    type: 'simple',
+    name: 'Plantillas de turmalina',
+    category: 'Accesorios',
+    subcategories: ['Turmalina', 'Bienestar'],
+    price: 9.0,
+    shortDescription:
+      'Plantillas con partículas de turmalina que estimulan puntos clave de reflexología podal, emiten calor natural, mejoran la circulación y alivian el cansancio al caminar.',
+    advantages: [
+      'Efecto térmico natural sin baterías ni electricidad.',
+      'Estimulación suave de puntos de reflexología plantar.',
+      'Recortables para adaptarse a calzado masculino y femenino.',
+      'Material duradero y fácil de limpiar.',
+    ],
+    benefits: [
+      {
+        title: 'Circulación y Alivio Podal',
+        description: 'Reduce la pesadez en piernas y pies en jornadas largas de pie o caminatas.',
+      },
+    ],
+    presentation: '1 par de plantillas ajustables.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Plantillas-de-turmalina-HGW.webp',
+    tags: ['Turmalina', 'Plantillas', 'Reflexología', 'Circulación'],
+  },
+  {
+    id: 1497,
+    type: 'simple',
+    name: 'Ganubi Candy / Ganoderma Candy',
+    category: 'Alimentos',
+    subcategories: ['SERIE CANDY HGW', 'Ganoderma'],
+    price: 8.3,
+    shortDescription:
+      'Caramelo duro con extracto de Ganoderma lucidum (hongo Reishi), ñame y acerola. El poder inmunológico y antioxidante milenario en una golosina saludable y práctica.',
+    advantages: [
+      'Contiene extracto puro de Ganoderma lucidum.',
+      'Enriquecido con ñame silvestre y acerola (fuente de vitamina C).',
+      'Sabor dulce y suave, sin sabor amargo.',
+      'Excelente apoyo para el sistema inmunológico.',
+    ],
+    benefits: [
+      {
+        title: 'Protección Inmune & Equilibrio Celular',
+        description: 'Reduce el estrés oxidativo celular y promueve la vitalidad.',
+      },
+    ],
+    presentation: 'Frasco de 30 g (~60 caramelos duros de 0.5 g).',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Ganubi-Candy-HGW-scaled-1.png',
+    tags: ['Ganoderma', 'Inmunidad', 'Caramelos', 'Reishi'],
+  },
+  {
+    id: 1499,
+    type: 'simple',
+    name: 'Hervidor Eléctrico HGW',
+    category: 'Equipo',
+    subcategories: ['SERIE CAFÉS SALUDABLES', 'Electrodomésticos'],
+    price: 60.0,
+    shortDescription:
+      'Hervidor de agua eléctrico rápido, moderno y seguro. Calienta agua en pocos minutos con apagado automático, ideal para preparar cafés saludables, tés y Choco Blue.',
+    advantages: [
+      'Hierve agua en pocos minutos de forma silenciosa y segura.',
+      'Diseño ergonómico, moderno y fácil de limpiar.',
+      'Control de temperatura eficiente y bajo consumo eléctrico.',
+      'El compañero perfecto para la línea de cafés e infusiones HGW.',
+    ],
+    presentation: '1 unidad en caja con base conectora.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Hervidor-electrico.png',
+    tags: ['Equipo', 'Hervidor', 'Café', 'Té'],
+  },
+  {
+    id: 1501,
+    type: 'simple',
+    name: 'Proteína de soja con arándanos en polvo',
+    category: 'Alimentos',
+    subcategories: ['Nutrición', 'Proteína Vegetal', 'Arándanos'],
+    price: 36.0,
+    shortDescription:
+      'Bebida nutritiva de alta calidad que combina proteína aislada de soya, proteína de maní, arándanos, lecitina de soya, konjac (fibra saciante) y xilitol. Libre de octógonos.',
+    advantages: [
+      'Proteína vegetal completa con todos los aminoácidos esenciales.',
+      'Rica en antocianinas de arándano antioxidante.',
+      'Fibra soluble de Konjac que genera saciedad y apoya el colesterol saludable.',
+      'Libre de octógonos, ligeramente dulce con xilitol.',
+    ],
+    benefits: [
+      {
+        title: 'Construcción Muscular & Saciedad',
+        description: 'Ideal para deportistas, control de peso saludable y complementar la ingesta proteica diaria.',
+      },
+    ],
+    usageInstructions: [
+      'Disolver 1 sachet en 200-250 ml de agua tibia o leche vegetal y mezclar homogéneamente.',
+    ],
+    presentation: 'Caja con 240 g (12 sachets de 20 g).',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/proteina-de-soya-p-500.png',
+    featured: true,
+    tags: ['Proteína', 'Soya', 'Arándanos', 'Nutrición'],
+  },
+  {
+    id: 1503,
+    type: 'simple',
+    name: 'Protector de cuello autocalentable de turmalina',
+    category: 'Accesorios',
+    subcategories: ['Turmalina', 'Alivio cervical'],
+    price: 16.0,
+    shortDescription:
+      'Collarín cervical con turmalina activa y efecto térmico natural. Estimula la circulación, relaja la musculatura del cuello y alivia la rigidez por pantallas o mala postura.',
+    advantages: [
+      'Emite calor natural e infrarrojo lejano por contacto y fricción.',
+      'No requiere electricidad ni pilas.',
+      'Cierre de velcro ajustable y suave al tacto.',
+      'Ideal para jornadas de oficina, viajes o descanso en casa.',
+    ],
+    benefits: [
+      {
+        title: 'Alivio Cervical Rápido',
+        description: 'Ayuda a disipar la tensión acumulada en la nuca y parte alta de la espalda en 15-45 minutos.',
+      },
+    ],
+    usageInstructions: [
+      'Friccionar ligeramente el protector con la mano antes de colocarlo sobre la piel seca.',
+      'Ajustar con el velcro y usar de 15 a 45 minutos al día.',
+    ],
+    presentation: '1 unidad ajustable.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Protector-de-cuello-con-turmalian-HGW.jpg',
+    tags: ['Turmalina', 'Cuello', 'Calor Natural', 'Postura'],
+  },
+  {
+    id: 1505,
+    type: 'simple',
+    name: 'Vino de arándanos (Blueberry Wine)',
+    category: 'Licores',
+    subcategories: ['Bebidas especiales', 'Arándanos'],
+    price: 36.0,
+    shortDescription:
+      'Vino premium elaborado con arándanos fermentados ricos en antocianinas y fitonutrientes protectores. Sabor exquisito, frutal y elegante para ocasiones especiales.',
+    advantages: [
+      'Elaborado con frutos puros de arándanos.',
+      'Alto poder antioxidante de antocianinas naturales.',
+      'Excelente aroma y buqué al descorcharse.',
+      'Temperatura de servicio ideal: 12 a 14 °C.',
+    ],
+    benefits: [
+      {
+        title: 'Antioxidantes Neuronales',
+        description: 'Los polifenoles del arándano apoyan la función cardiovascular y celular.',
+      },
+    ],
+    presentation: 'Botella de 750 ml (Contiene sulfitos. Venta para mayores de 18 años).',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Vino-de-arandanos-HGW.jpg',
+    tags: ['Vino', 'Arándanos', 'Gourmet', 'Antioxidante'],
+  },
+  {
+    id: 1507,
+    type: 'simple',
+    name: 'Fresh Drink Chang Jing Jing',
+    category: 'Alimentos',
+    subcategories: ['Desintoxicación', 'Digestivo'],
+    price: 13.0,
+    shortDescription:
+      'Bebida verde digestiva e instantánea para limpieza amigable y profunda del colon. Formulada con hierba de cebada, bayas de goji, Gan Cao (regaliz), diente de león y clorofila.',
+    advantages: [
+      'Instantáneo y de fácil disolución en agua fresca.',
+      'Rico en fibra natural, clorofila alcalinizante y cero grasas.',
+      'Sabor herbal verde muy agradable y refrescante.',
+      'Ayuda a desintoxicar el colon y regular el tránsito intestinal.',
+      'Protocolo estrella para salud digestiva e intestinal.',
+    ],
+    benefits: [
+      {
+        title: 'Limpieza de Colon & Regulación',
+        description: 'Alivia el estreñimiento ocasional y ayuda a depurar toxinas acumuladas.',
+      },
+      {
+        title: 'Alcalinizante con Clorofila & Diente de León',
+        description: 'Equilibra el pH corporal y optimiza el rendimiento hepático y físico.',
+      },
+    ],
+    usageInstructions: [
+      'Verter 1 sachet en 500 ml de agua fresca o fría, agitar bien y beber en ayunas o antes de dormir.',
+    ],
+    presentation: 'Caja con 6 sachets de 21 g (126 g total).',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/fresh-drink-p-500.png',
+    featured: true,
+    tags: ['Desintoxicación', 'Colon', 'Clorofila', 'Goji', 'Producto Estrella'],
+  },
+  {
+    id: 1509,
+    type: 'simple',
+    name: 'Té moldeador profesional / Pro Shaping Tea',
+    category: 'Alimentos',
+    subcategories: ['Tés', 'Control de peso'],
+    price: 23.0,
+    shortDescription:
+      'Mezcla aromática y tonificante en bolsitas filtrantes con té verde, semillas de casia, espino blanco, ginseng y arroz rojo para apoyar el metabolismo y control de grasas.',
+    advantages: [
+      'Concentrado de hierbas milenarias en prácticas bolsitas filtrantes.',
+      'Efecto termogénico y digestivo suave.',
+      'Apoya la regulación de lípidos y colesterol en sangre.',
+      'Sabor aromático y placentero para tomar caliente o frío.',
+    ],
+    benefits: [
+      {
+        title: 'Metabolismo de Grasas',
+        description: 'El té verde y la casia apoyan la eliminación natural de grasas y líquidos retenidos.',
+      },
+    ],
+    usageInstructions: [
+      'Colocar 1 bolsita filtrante en 250 ml de agua hirviendo y dejar reposar 5 minutos.',
+    ],
+    presentation: 'Caja con 24 sachets (72 g total).',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/proshaping-p-500.png',
+    tags: ['Té Verde', 'Metabolismo', 'Control de Peso', 'Ginseng'],
+  },
+  {
+    id: 1511,
+    type: 'simple',
+    name: 'Choco Gano',
+    category: 'Alimentos',
+    subcategories: ['Bebidas', 'Ganoderma', 'Cacao'],
+    price: 40.0,
+    shortDescription:
+      'Exquisita bebida instantánea que combina cacao natural de alta pureza, leche descremada y hongo Ganoderma lucidum. Energía, nutrición y defensas en cada taza.',
+    advantages: [
+      'Disolución rápida y homogénea en agua o leche caliente/fría.',
+      'Bajo en grasa con leche descremada de calidad.',
+      'Enriquecido con extracto de Ganoderma rico en antioxidantes.',
+      'Sabor a chocolate cremoso y reconfortante para toda la familia.',
+    ],
+    benefits: [
+      {
+        title: 'Nutrición Placentera',
+        description: 'Satisface el antojo de chocolate mientras aporta fitonutrientes que apoyan el sistema inmune.',
+      },
+    ],
+    usageInstructions: [
+      'Vaciar 1 sachet en una taza con 180 ml de agua o leche caliente, remover bien y disfrutar.',
+    ],
+    presentation: 'Caja de 660 g (20 sachets de 33 g).',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Choco-Gano-HGW.webp',
+    featured: true,
+    tags: ['Chocolate', 'Ganoderma', 'Cacao', 'Inmunidad'],
+  },
+  {
+    id: 1513,
+    type: 'simple',
+    name: 'Choco Blue',
+    category: 'Alimentos',
+    subcategories: ['Bebidas', 'Arándanos', 'Cacao'],
+    price: 40.0,
+    shortDescription:
+      'Combinación nutritiva de cacao puro, leche descremada y arándanos canadienses. Bebida deliciosa cargada de antioxidantes, proteínas y calcio para tus mañanas.',
+    advantages: [
+      'Sabor gourmet a chocolate con delicadas notas de arándano.',
+      'Doble poder antioxidante: cacao puro + arándano azul.',
+      'Aporte de calcio y proteínas con bajo perfil de grasa.',
+      'Excelente en desayunos, meriendas o tardes de relax.',
+    ],
+    benefits: [
+      {
+        title: 'Bienestar Cardiovascular & Celular',
+        description: 'Los flavonoides del cacao y las antocianinas del arándano favorecen la vitalidad general.',
+      },
+    ],
+    usageInstructions: [
+      'Disolver 1 sachet en 180 ml de agua o leche caliente y revolver bien.',
+    ],
+    presentation: 'Caja de 660 g (20 sachets de 33 g).',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Choco-Blue-HGW.webp',
+    featured: true,
+    tags: ['Chocolate', 'Arándanos', 'Antioxidante', 'Producto Estrella'],
+  },
+  {
+    id: 1515,
+    type: 'simple',
+    name: 'Péptido de colágeno de arándano',
+    category: 'Alimentos',
+    subcategories: ['Colágeno', 'Arándanos', 'Cuidado de la piel'],
+    price: 29.0,
+    shortDescription:
+      'Fórmula avanzada con péptidos y tripéptidos de colágeno hidrolizado, concentrado de 11 frutas y verduras (arándano, acerola, acaí, cereza, uva), vitaminas (A, C, B, D, E), minerales y FOS.',
+    advantages: [
+      'Péptidos y tripéptidos de colágeno de máxima absorción.',
+      'Enriquecido con 11 superfrutas y vegetales antioxidantes.',
+      'Aporte completo de vitaminas A, C, B1, B6, B12, D, E y minerales.',
+      'Delicioso sabor frutal natural, consistencia blanda y fácil digestión.',
+    ],
+    benefits: [
+      {
+        title: 'Regeneración de Articulaciones & Huesos',
+        description: 'Protege el cartílago, reduce el desgaste osteoarticular y promueve movilidad.',
+      },
+      {
+        title: 'Elasticidad & Juventud de la Piel',
+        description: 'Estimula la hidratación cutánea y atenúa líneas de expresión.',
+      },
+    ],
+    usageInstructions: [
+      'Consumir 1 sachet directamente o diluido en agua o jugo preferido una vez al día.',
+    ],
+    presentation: 'Caja con 300 g (12 sachets de 25 g).',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/colageno-p-500.png',
+    featured: true,
+    tags: ['Colágeno', 'Arándanos', 'Piel', 'Articulaciones', 'Producto Estrella'],
+  },
+  {
+    id: 1517,
+    type: 'simple',
+    name: 'Rodillera autocalentable de turmalina',
+    category: 'Accesorios',
+    subcategories: ['Turmalina', 'Articulaciones'],
+    price: 55.0,
+    shortDescription:
+      'Protector de rodilla con nanopartículas de turmalina. Proporciona soporte anatómico, estabilidad articular y efecto térmico natural que relaja músculos y estimula la circulación.',
+    advantages: [
+      'Tecnología térmica de turmalina: calor natural e infrarrojo lejano.',
+      'Diseño ergonómico, ligero y transpirable con ajuste de correas.',
+      'Sin baterías ni electricidad requerida.',
+      'Ideal para personas activas, deportistas o con desgaste articular.',
+    ],
+    benefits: [
+      {
+        title: 'Alivio & Estabilidad en Movimiento',
+        description: 'Mitiga molestias, rigidez e hinchazón en la articulación de la rodilla.',
+      },
+    ],
+    usageInstructions: [
+      'Colocar sobre la rodilla limpia y seca, friccionar levemente la superficie para activar el calor y usar de 30 min a 2 horas diarias.',
+    ],
+    presentation: '1 par de rodilleras ajustables.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Protector-de-rodilla-con-piedras-de-turmalina-HGW.jpg',
+    tags: ['Turmalina', 'Rodillera', 'Calor Natural', 'Articulaciones'],
+  },
+  {
+    id: 1519,
+    type: 'simple',
+    name: 'Collar de turmalina',
+    category: 'Accesorios',
+    subcategories: ['Joyería holística', 'Turmalina'],
+    price: 40.0,
+    shortDescription:
+      'Collar artesanal elaborado con piedras naturales de turmalina multicolor. Reconocido por emitir iones negativos y ofrecer protección frente a radiaciones electromagnéticas de dispositivos.',
+    advantages: [
+      'Piedras 100% naturales de turmalina seleccionada.',
+      'Elegante diseño artesanal adaptable a cualquier ocasión.',
+      'Protección holística contra ondas electromagnéticas (móviles, WiFi, PC).',
+      'Purifica y armoniza estados emocionales.',
+    ],
+    benefits: [
+      {
+        title: 'Equilibrio Energético',
+        description: 'Genera bienestar, ligereza y serenidad en el campo bioeléctrico corporal.',
+      },
+    ],
+    presentation: '1 collar en estuche de protección.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Collar-de-turmalina-No.-15.png',
+    tags: ['Collar', 'Turmalina', 'Protección CEM', 'Energía'],
+  },
+  {
+    id: 1521,
+    type: 'simple',
+    name: 'Almohada magnética de turmalina',
+    category: 'Equipo',
+    subcategories: ['Descanso', 'Turmalina', 'Magnetoterapia'],
+    price: 89.0,
+    shortDescription:
+      'Almohada ergonómica cervical que combina imanes terapéuticos y turmalina para un soporte óptimo del cuello, calor suave y relajación profunda durante el sueño.',
+    advantages: [
+      'Diseño anatómico que alinea la columna cervical.',
+      'Combina magnetoterapia suave con nanopartículas de turmalina.',
+      'Favorece un descanso reparador libre de tensiones matutinas.',
+      'Materiales hipoalergénicos de larga durabilidad.',
+    ],
+    benefits: [
+      {
+        title: 'Sueño Profundo & Alivio Cervical',
+        description: 'Reduce la rigidez del cuello y apoya la microcirculación durante la noche.',
+      },
+    ],
+    presentation: '1 almohada cervical anatómica.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Almohada-de-turmalina.png',
+    tags: ['Almohada', 'Turmalina', 'Descanso', 'Magnetoterapia'],
+  },
+  {
+    id: 1523,
+    type: 'simple',
+    name: 'Protector de cintura de turmalina',
+    category: 'Accesorios',
+    subcategories: ['Soporte lumbar', 'Turmalina'],
+    price: 69.0,
+    shortDescription:
+      'Cinturón lumbar ergonómico con nanoturmalina y piedras magnéticas. Genera calor natural, corrige la postura y alivia dolores y tensiones en la zona baja de la espalda.',
+    advantages: [
+      'Piedras magnéticas y turmalina para calor terapéutico pasivo.',
+      'Soporte lumbar firme con tiras elásticas de alta resistencia.',
+      'Material transpirable que se ajusta bajo la ropa.',
+      'Excelente para personas con dolor lumbar o largas horas sentadas.',
+    ],
+    benefits: [
+      {
+        title: 'Soporte Lumbar & Circulación',
+        description: 'Relaja contracturas musculares y estabiliza la postura en actividades diarias.',
+      },
+    ],
+    usageInstructions: [
+      'Colocar sobre la zona lumbar, friccionar levemente para acelerar el calor y usar de 30 min a 2 horas según tolerancia.',
+    ],
+    presentation: '1 cinturón lumbar ajustable.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Protector-de-cintura-con-piedras-de-turmalina-HGW.jpg',
+    tags: ['Cinturón', 'Turmalina', 'Lumbar', 'Postura'],
+  },
+  {
+    id: 1525,
+    type: 'simple',
+    name: 'Colgante Piedra Energética (Energy Stone Pendant)',
+    category: 'Accesorios',
+    subcategories: ['Turmalina', 'Iones Negativos'],
+    price: 50.0,
+    shortDescription:
+      'Colgante de piedra de turmalina con alta concentración de aniones e iones negativos. Mejora la vitalidad celular, claridad mental y flujo bioenergético.',
+    advantages: [
+      'Emisión constante de aniones naturales.',
+      'Ayuda a contrarrestar la fatiga y mejorar la energía mental.',
+      'Diseño elegante con cordón ajustable.',
+      'Respaldado por estudios de radiación bioeléctrica GDV.',
+    ],
+    benefits: [
+      {
+        title: 'Claridad Mental & Vitalidad',
+        description: 'Los iones negativos aumentan el flujo de oxígeno celular y reducen el estrés oxidativo.',
+      },
+    ],
+    presentation: '1 colgante en caja de presentación con tarjeta de autenticidad.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Colgante-de-piedra-energetica-HGW.jpg',
+    tags: ['Colgante', 'Piedra Energética', 'Turmalina', 'Aniones'],
+  },
+  {
+    id: 1527,
+    type: 'simple',
+    name: 'Café con Cordyceps',
+    category: 'Alimentos',
+    subcategories: ['SERIE CAFÉS SALUDABLES', 'Cordyceps'],
+    price: 23.0,
+    shortDescription:
+      'Café instantáneo premium enriquecido con micelio de Cordyceps sinensis y arándanos. Incrementa la energía natural, rendimiento atlético, salud respiratoria y defensas.',
+    advantages: [
+      'Práctico e instantáneo con suave textura y aroma exquisito.',
+      'Fortificado con Cordyceps sinensis milenario y polvo de arándanos.',
+      'Libre de octógonos.',
+      'Excelente estimulante sin provocar taquicardia ni picos de fatiga.',
+    ],
+    benefits: [
+      {
+        title: 'Rendimiento Físico & Oxigenación',
+        description: 'El Cordyceps mejora la captación de oxígeno y apoya la salud respiratoria e inmunológica.',
+      },
+    ],
+    usageInstructions: [
+      'Verter 1 sachet en una taza con 150 ml de agua caliente, revolver y disfrutar.',
+    ],
+    presentation: 'Caja con 180 g (12 sachets de 15 g).',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/coriceps-coffee-p-500-1.png',
+    featured: true,
+    tags: ['Café', 'Cordyceps', 'Energía', 'Respiratorio', 'Producto Estrella'],
+  },
+  {
+    id: 1529,
+    type: 'simple',
+    name: 'Café de arándanos (Blueberry Coffee)',
+    category: 'Alimentos',
+    subcategories: ['SERIE CAFÉS SALUDABLES', 'Arándanos'],
+    price: 23.0,
+    shortDescription:
+      'El café gourmet insignia de HGW con arándanos canadienses. Potente fuente de antocianinas con actividad antioxidante 50 veces mayor que la vitamina E para proteger vista y cerebro.',
+    advantages: [
+      'Antioxidante de acción rápida: 100% biodisponibilidad en 20 minutos.',
+      'Refuerza el sistema inmunológico y apoya la quema natural de grasas.',
+      'Protege la salud visual y la memoria.',
+      'Sabor balanceado y suave con crema no láctea de alta calidad.',
+    ],
+    benefits: [
+      {
+        title: 'Agudeza Visual & Enfoque Cerebral',
+        description: 'Las antocianinas atraviesan la barrera hematoencefálica fortaleciendo retina y memoria.',
+      },
+    ],
+    usageInstructions: [
+      'Verter 1 sachet en 150 ml de agua caliente y revolver bien.',
+    ],
+    presentation: 'Caja con 180 g (12 sobres de 15 g). Vida útil: 12 meses.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/blueberry-coffee-p-500.png',
+    featured: true,
+    tags: ['Café', 'Arándanos', 'Visión', 'Antioxidante', 'Producto Estrella'],
+  },
+  {
+    id: 1531,
+    type: 'simple',
+    name: 'Café soluble de Ganoderma',
+    category: 'Alimentos',
+    subcategories: ['SERIE CAFÉS SALUDABLES', 'Ganoderma'],
+    price: 23.0,
+    shortDescription:
+      'Café instantáneo de alta calidad combinado con extracto de Ganoderma lucidum (Reishi). Reduce el estrés oxidativo, regula la inmunidad y aporta vitalidad equilibrada.',
+    advantages: [
+      'Rico en polisacáridos y triterpenos de Ganoderma.',
+      'Protección antioxidante y celular.',
+      'Aroma placentero con dulzor equilibrado.',
+      'Excelente sustituto del café comercial tradicional.',
+    ],
+    benefits: [
+      {
+        title: 'Equilibrio Celular e Inmunológico',
+        description: 'Favorece una respuesta antiinflamatoria saludable y reduce el cansancio crónico.',
+      },
+    ],
+    usageInstructions: [
+      'Verter 1 sobre en 150 ml de agua caliente y mezclar bien.',
+    ],
+    presentation: 'Caja de 180 g (12 sobres de 15 g).',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/ganoderma-p-500.png',
+    tags: ['Café', 'Ganoderma', 'Reishi', 'Inmunidad'],
+  },
+  {
+    id: 1533,
+    type: 'simple',
+    name: 'Café Cordyceps (Coffee Ceps) - Sin Azúcar',
+    category: 'Alimentos',
+    subcategories: ['SERIE CAFÉS SALUDABLES', 'Sin Azúcar', 'Cordyceps'],
+    price: 20.0,
+    shortDescription:
+      'Bebida instantánea de café puro con micelio fermentado de Cordyceps sinensis 100% libre de azúcar añadido. Endulzado naturalmente, ideal para deportistas y personas con control de glucosa.',
+    advantages: [
+      '0% azúcar añadida.',
+      'Micelio de Cordyceps fermentado de alta pureza.',
+      'Reduce la fatiga muscular y estimula la secreción de jugos digestivos.',
+      'Favorece la salud renal y pulmonar.',
+    ],
+    benefits: [
+      {
+        title: 'Energía Limpia sin Carbohidratos',
+        description: 'Optimiza la fuerza física y el rendimiento deportivo sin elevar los niveles de insulina.',
+      },
+    ],
+    usageInstructions: [
+      'Verter 1 sobre en 150 ml de agua caliente y mezclar homogéneamente.',
+    ],
+    presentation: 'Caja de 42 g (12 sobres x 3.5 g).',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/cofee-ceps-p-500.png',
+    tags: ['Café', 'Sin Azúcar', 'Cordyceps', 'Keto', 'Deportes'],
+  },
+  {
+    id: 1535,
+    type: 'simple',
+    name: 'Café con Té Negro (BlackTea Coffee) - Sin Azúcar',
+    category: 'Alimentos',
+    subcategories: ['SERIE CAFÉS SALUDABLES', 'Sin Azúcar', 'Té Negro'],
+    price: 20.0,
+    shortDescription:
+      'Exclusiva fusión instantánea de café y té negro sin azúcar añadida. Estimula la corteza cerebral para un pensamiento más rápido, efecto diurético y apoyo gastrointestinal.',
+    advantages: [
+      'Fórmula 0% azúcar añadida.',
+      'Sinergia nootrópica de teína y cafeína natural.',
+      'Efecto diurético que combate la retención de líquidos y edemas.',
+      'Suave para el estómago.',
+    ],
+    benefits: [
+      {
+        title: 'Concentración Mental & Digestión',
+        description: 'Elimina la pesadez mental y apoya la función cardíaca y digestiva.',
+      },
+    ],
+    usageInstructions: [
+      'Verter 1 sobre en 150 ml de agua caliente y disfrutar su aroma profundo.',
+    ],
+    presentation: 'Caja de 42 g (12 sobres x 3.5 g).',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/black-tea-p-500.png',
+    tags: ['Café', 'Té Negro', 'Sin Azúcar', 'Nootrópico'],
+  },
+  {
+    id: 1537,
+    type: 'simple',
+    name: 'Taza de café térmica HGW (Coffee Cup)',
+    category: 'Equipo',
+    subcategories: ['SERIE CAFÉS SALUDABLES', 'Termos'],
+    price: 26.0,
+    shortDescription:
+      'Vaso térmico hermético de 390 ml para café y bebidas calientes o frías. Tapa antifugas, materiales seguros libres de BPA, ecológico y fácil de limpiar.',
+    advantages: [
+      'Conserva la temperatura de cafés calientes o bebidas frías por horas.',
+      'Tapa hermética antifugas con apertura práctica.',
+      'Capacidad ideal de 390 ml.',
+      'Diseño moderno, ligero y reutilizable.',
+    ],
+    presentation: '1 taza térmica de 390 ml.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Coffee-Cup.jpg',
+    tags: ['Taza Térmica', 'Café', 'Accesorios'],
+  },
+  {
+    id: 1539,
+    type: 'simple',
+    name: 'Café de Ashwagandha (Ashwaganda Coffee)',
+    category: 'Alimentos',
+    subcategories: ['SERIE CAFÉS SALUDABLES', 'Adaptógenos', 'Ashwagandha'],
+    price: 23.0,
+    shortDescription:
+      'Café instantáneo adaptógeno enriquecido con extracto de Ashwagandha (ginseng indio), ostra, eucommia y frambuesa. Reduce el estrés y la ansiedad mientras brinda energía serena.',
+    advantages: [
+      'Combina energía del café con el efecto antiestrés de la Ashwagandha.',
+      'Contiene extracto de raíz de Ashwagandha, Eucommia y Ostra.',
+      'Promueve claridad mental sin taquicardia ni nerviosismo.',
+      'Apoya la regulación natural del sueño y descanso nocturno.',
+    ],
+    benefits: [
+      {
+        title: 'Calma & Resistencia al Estrés',
+        description: 'Los withanólidos de la ashwagandha modulan los niveles de cortisol reduciendo el agotamiento mental.',
+      },
+    ],
+    usageInstructions: [
+      'Disolver 1 sobre en 150 ml de agua tibia, mezclar bien y tomar por la mañana o tarde.',
+    ],
+    presentation: 'Caja con 12 sobres de 15 g.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/aswaganda-coffee-1.png',
+    tags: ['Café', 'Ashwagandha', 'Adaptógeno', 'Antiestrés'],
+  },
+  {
+    id: 1541,
+    type: 'simple',
+    name: 'Café Trébol (Trébol Coffee)',
+    category: 'Alimentos',
+    subcategories: ['SERIE CAFÉS SALUDABLES', 'Salud Femenina'],
+    price: 23.0,
+    shortDescription:
+      'Bebida instantánea con extracto de Trébol Rojo (Trifolium pratense), rosa, semilla de lino y pueraria. Fórmula herbal tradicional para apoyar el balance hormonal femenino y la menopausia.',
+    advantages: [
+      'Enriquecido con Trébol Rojo (isoflavonas naturales).',
+      'Contiene extracto de rosa, lino y pueraria.',
+      'Alivia sofocos y síntomas asociados al climaterio y menopausia.',
+      'Sabor aromático, relajante y reconfortante.',
+    ],
+    benefits: [
+      {
+        title: 'Equilibrio Hormonal & Bienestar Femenino',
+        description: 'Aporte de fitoestrógenos naturales que promueven la serenidad y confort en la mujer.',
+      },
+    ],
+    usageInstructions: [
+      'Disolver 1 sobre en 150 ml de agua tibia y disfrutar.',
+    ],
+    presentation: 'Caja con 12 sobres de 15 g.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/trebol.png',
+    tags: ['Café', 'Trébol Rojo', 'Salud Femenina', 'Menopausia'],
+  },
+  {
+    id: 1543,
+    type: 'simple',
+    name: 'Cápsula Spirulina Plus',
+    category: 'Suplementos',
+    subcategories: ['Productos para el Sistema digestivo', 'Superalimentos'],
+    price: 25.0,
+    shortDescription:
+      'Suplemento nutricional premium con 60 cápsulas de microalga Spirulina enriquecida con Ginseng. Aporte concentrado de clorofila, proteínas vegetales, hierro y vitaminas esenciales.',
+    advantages: [
+      'Fuente de alta biodisponibilidad de antioxidantes, vitaminas y minerales.',
+      'Aumenta la energía celular y refuerza el sistema inmunológico.',
+      'Apoya la desintoxicación natural del organismo de metales pesados.',
+      'Contribuye al control saludable del apetito y peso corporal.',
+    ],
+    benefits: [
+      {
+        title: 'Superalimento Completo',
+        description: 'Aporta aminoácidos esenciales y ficocianina para regeneración celular y vitalidad diaria.',
+      },
+    ],
+    usageInstructions: [
+      'Tomar 1 a 2 cápsulas al día con un vaso de agua antes de los alimentos.',
+    ],
+    presentation: 'Frasco con 60 cápsulas de 500 mg.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Spirulina-en-capsulas-Plus-con-Gingseng-HGW.jpg',
+    featured: true,
+    tags: ['Spirulina', 'Ginseng', 'Suplemento', 'Inmunidad', 'Digestivo'],
+  },
+  {
+    id: 1545,
+    type: 'simple',
+    name: 'Berry Juice HIGH VC',
+    category: 'Alimentos',
+    subcategories: ['Bebidas', 'Arándanos', 'Vitamina C'],
+    price: 25.0,
+    shortDescription:
+      'Bebida frutal en polvo con altísima concentración de vitamina C natural y antocianinas procedentes de arándanos, moras, cerezas, uvas y frambuesas. Sabor exquisito.',
+    advantages: [
+      'Explosión de 5 frutos rojos ricos en antioxidantes.',
+      'Estimula la producción natural de colágeno y refuerza defensas.',
+      'Protege la salud ocular frente a pantallas y luz azul en niños y adultos.',
+      'La cereza aporta melatonina vegetal natural que mejora el sueño.',
+    ],
+    benefits: [
+      {
+        title: 'Inmunidad & Vitamina C Pura',
+        description: 'Potente acción antiviral, antiinflamatoria y tonificante para toda la familia.',
+      },
+    ],
+    usageInstructions: [
+      'Verter 1 sachet en 150 ml de agua fresca o tibia, mezclar y beber inmediatamente.',
+    ],
+    presentation: 'Caja con 30 sachets de 6 g (180 g total).',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/berry-juice-p-500.png',
+    featured: true,
+    tags: ['Vitamina C', 'Arándanos', 'Frutos Rojos', 'Inmunidad'],
+  },
+  {
+    id: 1547,
+    type: 'simple',
+    name: 'Vaso Térmico HGW',
+    category: 'Equipo',
+    subcategories: ['Termos', 'Accesorios'],
+    price: 31.5,
+    shortDescription:
+      'Vaso térmico premium con aislamiento al vacío de doble pared. Conserva bebidas frías o calientes por largas horas con tapa antifugas y diseño elegante.',
+    advantages: [
+      'Aislamiento térmico al vacío para frío o calor duradero.',
+      'Acero inoxidable de grado alimentario, libre de BPA.',
+      'Tapa hermética con boquilla ergonómica.',
+      'Ecológico, reutilizable y fácil de lavar.',
+    ],
+    presentation: '1 unidad.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Vaso-termico.jpg',
+    tags: ['Vaso Térmico', 'Termo', 'Bebidas'],
+  },
+  {
+    id: 1549,
+    type: 'simple',
+    name: 'Lactiberry',
+    category: 'Alimentos',
+    subcategories: ['Nutrición', 'Arándanos', 'Té Negro'],
+    price: 26.0,
+    shortDescription:
+      'Deliciosa mezcla instantánea que combina arándanos, suero de leche de Nueva Zelanda de alta pureza y té negro. Aporta proteínas, calcio y bioactivos para nutrir los huesos.',
+    advantages: [
+      'Elaborado con suero de leche importado de Nueva Zelanda.',
+      'Contiene arándanos en polvo ricos en antocianinas.',
+      'Aporte de polifenoles de té negro que protegen vasos sanguíneos y huesos.',
+      'Textura cremosa y sabor irresistible.',
+    ],
+    benefits: [
+      {
+        title: 'Nutrición Ósea y Muscular',
+        description: 'Excelente para adultos mayores, deportistas o quienes buscan calcio y proteínas de fácil asimilación.',
+      },
+    ],
+    usageInstructions: [
+      'Disolver 1 sachet en 150 ml de agua caliente y mezclar bien.',
+    ],
+    presentation: 'Caja con 300 g (10 sachets de 30 g).',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/lactiberry-p-500.png',
+    tags: ['Lactiberry', 'Suero de Leche', 'Arándanos', 'Té Negro'],
+  },
+  {
+    id: 1551,
+    type: 'simple',
+    name: 'Tourmaline Thermo (WATERSON)',
+    category: 'Equipo',
+    subcategories: ['Turmalina', 'Agua Alcalina', 'Termos'],
+    price: 95.0,
+    bv: '32.50 BV',
+    shortDescription:
+      'Termo tecnológico de acero inoxidable con filtro mineral de piedras de turmalina natural en su interior. Transforma el agua ácida en agua alcalina natural rica en minerales e iones negativos.',
+    advantages: [
+      'Convierte el agua regular en agua alcalina de forma natural.',
+      'Libera microelementos esenciales e iones negativos.',
+      'Fabricado en acero inoxidable quirúrgico no tóxico de 500 ml.',
+      'Portátil, anatómico y de elegante acabado metálico.',
+      'Genera 32.50 BV de activación como socio.',
+    ],
+    benefits: [
+      {
+        title: 'Alcalinización & Desintoxicación',
+        description: 'Neutraliza los radicales libres y la acidez celular facilitando la eliminación de toxinas metabólicas.',
+      },
+    ],
+    presentation: 'Termo de 500 ml en caja con certificación.',
+    imageUrl: 'https://hgwpanama.com/host/wp-content/uploads/2026/07/Thermo-de-turmalina.jpg',
+    featured: true,
+    tags: ['Termo', 'Turmalina', 'Agua Alcalina', 'Waterson', 'Producto Estrella'],
+  },
+];
+
+export const membershipPackages: Product[] = productsData.filter(
+  (p) => p.category === 'MEMBRESIAS HGW'
+);
