@@ -227,42 +227,46 @@ export default function App() {
         {/* Render View Depending on Active Navigation Section */}
         {activeSection === 'catalogo' && (
           <div className="space-y-10">
-            {/* Hero Section */}
-            <HeroBanner
-              onOpenRegistrationModal={() => handleOpenRegistrationModal('Membresía HGW')}
-              onExploreCatalog={() => {
-                const catalogEl = document.getElementById('catalogo-main');
-                if (catalogEl) {
-                  catalogEl.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-            />
+            {/* Hero Section & Quick Promo (Hidden when searching to focus on search results) */}
+            {!searchTerm.trim() && (
+              <>
+                <HeroBanner
+                  onOpenRegistrationModal={() => handleOpenRegistrationModal('Membresía HGW')}
+                  onExploreCatalog={() => {
+                    const catalogEl = document.getElementById('catalogo-main');
+                    if (catalogEl) {
+                      catalogEl.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                />
 
-            {/* Quick Membership Alert Banner */}
-            <div className="bg-gradient-to-r from-amber-500/10 via-emerald-500/10 to-teal-500/10 border border-amber-300/60 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-xl bg-amber-400 text-slate-950 font-black flex items-center justify-center shrink-0 shadow-xs">
-                  <Coins className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-extrabold text-slate-900 text-sm sm:text-base">
-                    ¿Quieres comprar con 30% a 60% de descuento como Distribuidor?
-                  </h4>
-                  <p className="text-xs text-slate-600">
-                    Actívate desde 50 BV (~$89 USD) con productos a tu libre elección y accede al Plan de Ganancia Mutua 50/50.
-                  </p>
-                </div>
-              </div>
+                {/* Quick Membership Alert Banner */}
+                <div className="bg-gradient-to-r from-amber-500/10 via-emerald-500/10 to-teal-500/10 border border-amber-300/60 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-11 h-11 rounded-xl bg-amber-400 text-slate-950 font-black flex items-center justify-center shrink-0 shadow-xs">
+                      <Coins className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-extrabold text-slate-900 text-sm sm:text-base">
+                        ¿Quieres comprar con 30% a 60% de descuento como Distribuidor?
+                      </h4>
+                      <p className="text-xs text-slate-600">
+                        Actívate desde 50 BV (~$89 USD) con productos a tu libre elección y accede al Plan de Ganancia Mutua 50/50.
+                      </p>
+                    </div>
+                  </div>
 
-              <button
-                onClick={() => handleOpenRegistrationModal('Membresía HGW')}
-                className="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-xs shrink-0 flex items-center gap-1.5 transition-colors cursor-pointer"
-                id="banner-choose-membership-btn"
-              >
-                <UserCheck className="w-4 h-4 text-amber-400" />
-                <span>Elegir Membresía</span>
-              </button>
-            </div>
+                  <button
+                    onClick={() => handleOpenRegistrationModal('Membresía HGW')}
+                    className="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-xs shrink-0 flex items-center gap-1.5 transition-colors cursor-pointer"
+                    id="banner-choose-membership-btn"
+                  >
+                    <UserCheck className="w-4 h-4 text-amber-400" />
+                    <span>Elegir Membresía</span>
+                  </button>
+                </div>
+              </>
+            )}
 
             {/* Featured Products Spotlight */}
             {!searchTerm && selectedCategory === 'Todos' && (

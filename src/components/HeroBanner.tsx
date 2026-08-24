@@ -38,15 +38,15 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
 
         {/* Main Headings */}
         <div className="space-y-3">
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1]">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-white">
             Nutrición Celular, Turmalina &{' '}
             <span className="bg-gradient-to-r from-emerald-300 via-teal-200 to-amber-200 bg-clip-text text-transparent">
               Ganancia Mutua
             </span>
           </h1>
 
-          <p className="text-sm sm:text-base md:text-lg text-emerald-100/90 leading-relaxed max-w-2xl">
-            Descubre la gama más completa de superalimentos con <strong>arándanos azules de Canadá</strong>, café con <strong>Cordyceps y Ganoderma</strong>, toallas y protectores con <strong>nanoturmalina aniónica</strong>, y la oportunidad de emprender con <strong>Plan de Ganancia Mutua 50/50</strong>.
+          <p className="text-sm sm:text-base md:text-lg text-emerald-100 leading-relaxed max-w-2xl">
+            Descubre la gama más completa de superalimentos con <strong className="text-white font-bold">arándanos azules de Canadá</strong>, café con <strong className="text-white font-bold">Cordyceps y Ganoderma</strong>, toallas y protectores con <strong className="text-white font-bold">nanoturmalina aniónica</strong>, y la oportunidad de emprender con <strong className="text-white font-bold">Plan de Ganancia Mutua 50/50</strong>.
           </p>
         </div>
 
