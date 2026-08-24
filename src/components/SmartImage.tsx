@@ -5,7 +5,6 @@ interface SmartImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   alt: string;
   className?: string;
   fallbackContent?: React.ReactNode;
-  aspectRatioContainer?: boolean;
 }
 
 export function getCandidateImageUrls(rawUrl?: string): string[] {
@@ -26,19 +25,21 @@ export function getCandidateImageUrls(rawUrl?: string): string[] {
     return [
       `https://drive.google.com/thumbnail?id=${id}&sz=w1000`,
       `https://lh3.googleusercontent.com/d/${id}`,
+      `https://wsrv.nl/?url=drive.google.com/uc?id=${id}&w=1000`,
       `https://images.weserv.nl/?url=drive.google.com/uc?id=${id}&w=1000`,
       `https://drive.google.com/uc?export=view&id=${id}`,
-      `https://lh3.googleusercontent.com/u/0/d/${id}`,
     ];
   }
 
-  // Check if it's an external web URL (like hgwpanama.com)
+  // Check if it's an external web URL
   if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
     const cleanNoProto = trimmed.replace(/^https?:\/\//, '');
     return [
       trimmed,
-      `https://images.weserv.nl/?url=${encodeURIComponent(cleanNoProto)}`,
       `https://wsrv.nl/?url=${encodeURIComponent(cleanNoProto)}`,
+      `https://images.weserv.nl/?url=${encodeURIComponent(cleanNoProto)}`,
+      `https://wsrv.nl/?url=${encodeURIComponent(trimmed)}`,
+      `https://images.weserv.nl/?url=${encodeURIComponent(trimmed)}`,
     ];
   }
 
@@ -94,7 +95,6 @@ export const SmartImage: React.FC<SmartImageProps> = ({
       alt={alt}
       onError={handleError}
       referrerPolicy="no-referrer"
-      crossOrigin="anonymous"
       draggable={false}
       onContextMenu={(e) => e.preventDefault()}
       className={className}
@@ -102,3 +102,4 @@ export const SmartImage: React.FC<SmartImageProps> = ({
     />
   );
 };
+
