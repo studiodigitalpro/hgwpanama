@@ -429,7 +429,7 @@ export const productsData: Product[] = [
     name: 'Protector Intimo diario con Turmalina',
     category: 'Cuidado personal',
     subcategories: ['Higiene femenina', 'Turmalina'],
-    price: 5.0,
+    price: 5.5,
     shortDescription:
       'Enjoyable Panty Liner HGW: protector diario con banda aniónica de turmalina y suave capa de algodón. Brinda frescura, absorción, equilibrio y confort diario.',
     advantages: [
@@ -454,7 +454,7 @@ export const productsData: Product[] = [
     name: 'Toalla Sanitaria Día con Turmalina',
     category: 'Cuidado personal',
     subcategories: ['Higiene femenina', 'Turmalina'],
-    price: 5.0,
+    price: 5.5,
     shortDescription:
       'Enjoyable Day Use HGW: toalla sanitaria de uso diurno con tecnología de turmalina generadora de aniones, algodón suave, gran capacidad de absorción y diseño seguro.',
     advantages: [
@@ -479,7 +479,7 @@ export const productsData: Product[] = [
     name: 'Toalla Sanitaria Noche con Turmalina',
     category: 'Cuidado personal',
     subcategories: ['Higiene femenina', 'Turmalina'],
-    price: 4.0,
+    price: 4.5,
     shortDescription:
       'Enjoyable Night Use HGW: toalla sanitaria nocturna extralarga con banda de turmalina y aniones. Máxima absorción y protección anatómica para un descanso tranquilo.',
     advantages: [

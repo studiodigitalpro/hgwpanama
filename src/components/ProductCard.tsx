@@ -8,8 +8,11 @@ import {
   Zap,
   ArrowRight,
   ShieldCheck,
+  Share2,
+  MessageCircle,
 } from 'lucide-react';
 import { Product } from '../types';
+import { companyData } from '../data/companyInfo';
 
 interface ProductCardProps {
   product: Product;
@@ -26,6 +29,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   const [imgError, setImgError] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
+  const [shared, setShared] = useState(false);
 
   const isMembership = product.category === 'MEMBRESIAS HGW';
 
@@ -38,6 +42,30 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     onAddToCart(product);
     setIsAdded(true);
     setTimeout(() => setIsAdded(false), 1500);
+  };
+
+  const handleShareWhatsApp = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    let text = `🌿 *${product.name}* - HGW (Health Green World)\n\n`;
+    text += `💵 *Precio:* $${product.price.toFixed(2)} USD\n`;
+    if (product.bv) {
+      text += `⭐ *Puntaje:* ${typeof product.bv === 'number' ? `${product.bv} BV` : product.bv}\n`;
+    }
+    if (product.presentation) {
+      text += `📦 *Presentación:* ${product.presentation}\n`;
+    }
+    text += `\n📝 *Detalles:* ${product.shortDescription}\n\n`;
+    if (product.benefits && product.benefits.length > 0) {
+      text += `✨ *Beneficios clave:*\n${product.benefits.slice(0, 3).map((b) => `• ${b}`).join('\n')}\n\n`;
+    }
+    text += `📲 *Para consultas o pedidos en Panamá con Yamilka Batista:*\nhttps://wa.me/50767788375\n\n`;
+    text += `🌟 *Membresía con 30% a 60% desc (Patrocinador Yamilka507):*\nhttps://www.healthgreenworld.com/?userName=Yamilka507`;
+
+    const shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+    window.open(shareUrl, '_blank');
+
+    setShared(true);
+    setTimeout(() => setShared(false), 2000);
   };
 
   // Fallback visual colors by category
@@ -67,7 +95,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       id={`product-card-${product.id}`}
     >
       {/* Badges Top Bar */}
-      <div className="absolute top-3 left-3 right-3 z-10 flex items-center justify-between gap-1 pointer-events-none">
+      <div className="absolute top-3 left-3 right-3 z-10 flex items-center justify-between gap-1">
         <span
           className={`text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-full border shadow-xs backdrop-blur-xs ${getCategoryColor(
             product.category
@@ -76,11 +104,24 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           {product.category === 'MEMBRESIAS HGW' ? 'Membresía Oficial' : product.category}
         </span>
 
-        {product.bv && (
-          <span className="bg-emerald-800/90 text-amber-300 text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full border border-emerald-600/50 shadow-xs">
-            {typeof product.bv === 'number' ? `${product.bv} BV` : product.bv}
-          </span>
-        )}
+        <div className="flex items-center gap-1.5">
+          {product.bv && (
+            <span className="bg-emerald-800/90 text-amber-300 text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full border border-emerald-600/50 shadow-xs">
+              {typeof product.bv === 'number' ? `${product.bv} BV` : product.bv}
+            </span>
+          )}
+
+          {/* Share Button on Top Corner */}
+          <button
+            onClick={handleShareWhatsApp}
+            className="p-1.5 rounded-full bg-white/90 hover:bg-emerald-600 text-slate-600 hover:text-white border border-slate-200 hover:border-emerald-600 shadow-xs transition-colors cursor-pointer"
+            title="Compartir en WhatsApp"
+            aria-label={`Compartir ${product.name} en WhatsApp`}
+            id={`share-whatsapp-${product.id}`}
+          >
+            <Share2 className="w-3.5 h-3.5" />
+          </button>
+        </div>
       </div>
 
       {/* Product Image Stage */}
@@ -145,42 +186,62 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                 </span>
               )}
             </div>
+            {!isMembership && (
+              <div className="text-[10px] text-teal-700 font-semibold" title="Precio para socios afiliados con compra inicial mínima de 50 BV">
+                Socio: ${(product.price * 0.7).toFixed(2)} (-30%)
+              </div>
+            )}
           </div>
 
-          {/* Action Button */}
-          {isMembership ? (
+          {/* Action Buttons Group */}
+          <div className="flex items-center gap-1.5">
             <button
-              onClick={handleAdd}
-              className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-xs font-bold px-3 py-2 rounded-xl shadow-xs hover:shadow flex items-center gap-1 transition-all cursor-pointer"
-              id={`membership-button-${product.id}`}
-            >
-              <span>Elegir</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          ) : (
-            <button
-              onClick={handleAdd}
-              className={`p-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
-                isAdded
-                  ? 'bg-emerald-600 text-white'
-                  : 'bg-emerald-50 hover:bg-emerald-600 text-emerald-700 hover:text-white border border-emerald-200 hover:border-emerald-600'
+              onClick={handleShareWhatsApp}
+              className={`p-2.5 rounded-xl border transition-all cursor-pointer flex items-center justify-center ${
+                shared
+                  ? 'bg-emerald-600 text-white border-emerald-600'
+                  : 'bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border-emerald-200'
               }`}
-              id={`add-to-cart-${product.id}`}
-              aria-label={`Añadir ${product.name} al pedido`}
+              title="Compartir producto en WhatsApp"
+              aria-label="Compartir en WhatsApp"
             >
-              {isAdded ? (
-                <>
-                  <Check className="w-4 h-4" />
-                  <span className="hidden sm:inline">Añadido</span>
-                </>
-              ) : (
-                <>
-                  <ShoppingBag className="w-4 h-4" />
-                  <span className="hidden sm:inline">Añadir</span>
-                </>
-              )}
+              <Share2 className="w-4 h-4" />
             </button>
-          )}
+
+            {isMembership ? (
+              <button
+                onClick={handleAdd}
+                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white text-xs font-bold px-3 py-2.5 rounded-xl shadow-xs hover:shadow flex items-center gap-1 transition-all cursor-pointer"
+                id={`membership-button-${product.id}`}
+              >
+                <span>Elegir</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            ) : (
+              <button
+                onClick={handleAdd}
+                className={`p-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+                  isAdded
+                    ? 'bg-emerald-600 text-white'
+                    : 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs'
+                }`}
+                id={`add-to-cart-${product.id}`}
+                aria-label={`Añadir ${product.name} al pedido`}
+              >
+                {isAdded ? (
+                  <>
+                    <Check className="w-4 h-4" />
+                    <span className="hidden sm:inline">Añadido</span>
+                  </>
+                ) : (
+                  <>
+                    <ShoppingBag className="w-4 h-4" />
+                    <span className="hidden sm:inline">Añadir</span>
+                  </>
+                )}
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>

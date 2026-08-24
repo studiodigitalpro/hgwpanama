@@ -100,7 +100,7 @@ export const RegistrationVideoModal: React.FC<RegistrationVideoModalProps> = ({
             </div>
 
             <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed pt-1">
-              Al registrarte como socio distribuidor obtienes de inmediato de un <strong>30% a un 60% de descuento</strong> en todos los productos, acceso al <strong>Plan de Ganancia Mutua 50/50</strong> y capacitación 24/7 en la <strong>Academia Digital HGW</strong>.
+              Al afiliarte como socio distribuidor y realizar tu compra de activación inicial (mínimo <strong>50 BV / puntos</strong>), obtienes de inmediato de un <strong>30% a un 60% de descuento</strong> en todos los productos, acceso al <strong>Plan de Ganancia Mutua 50/50</strong> y capacitación 24/7 en la <strong>Academia Digital HGW</strong>.
             </p>
           </div>
 

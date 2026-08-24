@@ -156,24 +156,45 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
         </div>
 
         {/* Pricing Toggle Banner (Cliente vs Distribuidor) */}
-        <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-b border-emerald-100 p-3 px-4 flex items-center justify-between gap-3 text-xs">
-          <div className="flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-emerald-700 shrink-0" />
-            <span className="text-slate-800 font-medium">
-              Ver con <strong>30% de Descuento Socio:</strong>
-            </span>
+        <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border-b border-emerald-100 p-3 px-4 space-y-2">
+          <div className="flex items-center justify-between gap-3 text-xs">
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-emerald-700 shrink-0" />
+              <span className="text-slate-800 font-medium">
+                Ver con <strong>30% de Descuento Socio:</strong>
+              </span>
+            </div>
+
+            <label className="relative inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                checked={isDistributorPrice}
+                onChange={(e) => setIsDistributorPrice(e.target.checked)}
+                className="sr-only peer"
+                id="distributor-price-toggle"
+              />
+              <div className="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-600"></div>
+            </label>
           </div>
 
-          <label className="relative inline-flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              checked={isDistributorPrice}
-              onChange={(e) => setIsDistributorPrice(e.target.checked)}
-              className="sr-only peer"
-              id="distributor-price-toggle"
-            />
-            <div className="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-600"></div>
-          </label>
+          <p className="text-[11px] text-slate-600 leading-snug">
+            💡 <em>El precio de distribuidor aplica al afiliarte como socio y realizar una compra mínima de <strong>50 BV (puntos)</strong>.</em>
+          </p>
+
+          {isDistributorPrice && totalBV > 0 && totalBV < 50 && (
+            <div className="bg-amber-100/90 border border-amber-300/80 rounded-xl p-2 text-[11px] text-amber-900 flex items-center justify-between gap-2">
+              <span>Llevas <strong>{totalBV} BV</strong>. Te faltan <strong>{(50 - totalBV).toFixed(1)} BV</strong> para los 50 BV de afiliación.</span>
+              <button
+                onClick={() => {
+                  onClose();
+                  onOpenRegistrationModal();
+                }}
+                className="underline font-bold text-amber-950 shrink-0 cursor-pointer"
+              >
+                Ver membresías
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Scrollable Items List */}

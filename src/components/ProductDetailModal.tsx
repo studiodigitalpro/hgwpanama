@@ -12,6 +12,7 @@ import {
   HeartHandshake,
   ArrowRight,
   ExternalLink,
+  Share2,
 } from 'lucide-react';
 import { Product } from '../types';
 import { companyData } from '../data/companyInfo';
@@ -32,6 +33,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   const [activeTab, setActiveTab] = useState<'info' | 'benefits' | 'usage'>('info');
   const [imgError, setImgError] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
+  const [shared, setShared] = useState(false);
 
   if (!product) return null;
 
@@ -55,6 +57,29 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
       )} USD). ¿Podrías darme más detalles o asesorarme?`
     );
     window.open(`https://wa.me/${companyData.sponsor.whatsapp.replace('+', '')}?text=${text}`, '_blank');
+  };
+
+  const handleShareWhatsApp = () => {
+    let text = `🌿 *${product.name}* - HGW Panamá\n\n`;
+    text += `💵 *Precio:* $${product.price.toFixed(2)} USD\n`;
+    if (product.bv) {
+      text += `⭐ *Puntaje:* ${typeof product.bv === 'number' ? `${product.bv} BV` : product.bv}\n`;
+    }
+    if (product.presentation) {
+      text += `📦 *Presentación:* ${product.presentation}\n`;
+    }
+    text += `\n📝 *Descripción:* ${product.shortDescription}\n\n`;
+    if (product.benefits && product.benefits.length > 0) {
+      text += `✨ *Beneficios destacados:*\n${product.benefits.map((b) => `• ${b}`).join('\n')}\n\n`;
+    }
+    text += `📲 *Para pedidos y asesoría personalizada en Panamá con Yamilka Batista:*\nhttps://wa.me/50767788375\n\n`;
+    text += `🌐 *Registro oficial como Socio con 30% a 60% desc (Patrocinador Yamilka507):*\nhttps://www.healthgreenworld.com/?userName=Yamilka507`;
+
+    const shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+    window.open(shareUrl, '_blank');
+
+    setShared(true);
+    setTimeout(() => setShared(false), 2000);
   };
 
   return (
@@ -81,14 +106,26 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             )}
           </div>
 
-          <button
-            onClick={onClose}
-            className="p-1.5 rounded-full hover:bg-slate-200 text-slate-500 hover:text-slate-800 transition-colors cursor-pointer"
-            aria-label="Cerrar modal"
-            id="close-product-modal-button"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleShareWhatsApp}
+              className="p-1.5 px-3 rounded-full bg-emerald-50 hover:bg-emerald-600 text-emerald-800 hover:text-white border border-emerald-200 text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer"
+              title="Compartir producto en WhatsApp"
+              id="header-share-whatsapp-btn"
+            >
+              <Share2 className="w-3.5 h-3.5" />
+              <span>{shared ? '¡Listo!' : 'Compartir'}</span>
+            </button>
+
+            <button
+              onClick={onClose}
+              className="p-1.5 rounded-full hover:bg-slate-200 text-slate-500 hover:text-slate-800 transition-colors cursor-pointer"
+              aria-label="Cerrar modal"
+              id="close-product-modal-button"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Scrollable Body */}
@@ -118,17 +155,28 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 {product.name}
               </h2>
 
-              <div className="flex items-baseline gap-2">
+              <div className="flex flex-wrap items-baseline gap-2.5">
                 <span className="text-2xl sm:text-3xl font-black text-emerald-800">
                   ${product.price.toFixed(2)}{' '}
                   <span className="text-sm font-semibold text-slate-500">USD</span>
                 </span>
+                {!isMembership && (
+                  <span className="text-xs sm:text-sm font-bold text-teal-800 bg-teal-50 border border-teal-200 px-2.5 py-1 rounded-lg">
+                    Socio/Distribuidor: ${(product.price * 0.7).toFixed(2)} USD (-30%)
+                  </span>
+                )}
                 {product.regularPrice && product.regularPrice > product.price && (
                   <span className="text-sm text-slate-400 line-through">
                     ${product.regularPrice.toFixed(2)} USD
                   </span>
                 )}
               </div>
+
+              {!isMembership && (
+                <p className="text-[11px] text-slate-500 italic">
+                  * El precio de distribuidor aplica al afiliarte como socio y realizar una compra mínima de <strong>50 BV (puntos)</strong>.
+                </p>
+              )}
 
               <p className="text-sm text-slate-600 leading-relaxed">
                 {product.shortDescription}
@@ -177,6 +225,16 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 >
                   <Phone className="w-4 h-4 text-emerald-600" />
                   <span>Consultar</span>
+                </button>
+
+                <button
+                  onClick={handleShareWhatsApp}
+                  className="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 font-semibold py-2.5 px-3.5 rounded-xl text-sm flex items-center gap-1.5 transition-colors cursor-pointer"
+                  id="modal-whatsapp-share-button"
+                  title="Compartir en WhatsApp"
+                >
+                  <Share2 className="w-4 h-4 text-emerald-600" />
+                  <span>{shared ? '¡Compartido!' : 'Compartir'}</span>
                 </button>
               </div>
             </div>
