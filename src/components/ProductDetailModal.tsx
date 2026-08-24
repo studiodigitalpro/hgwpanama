@@ -143,7 +143,9 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   src={product.imageUrl}
                   alt={product.name}
                   onError={() => setImgError(true)}
-                  className="max-h-60 max-w-full object-contain drop-shadow-md"
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
+                  className="max-h-60 max-w-full object-contain drop-shadow-md select-none pointer-events-none"
                 />
               ) : (
                 <div className="text-center p-6 text-slate-400">

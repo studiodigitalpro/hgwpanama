@@ -73,7 +73,9 @@ export const FoundersSection: React.FC<FoundersSectionProps> = ({
                     src={companyData.founders[0].image}
                     alt={companyData.founders[0].name}
                     onError={() => setDemingImgErr(true)}
-                    className="w-full h-full object-cover"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
+                    className="w-full h-full object-cover select-none pointer-events-none"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-emerald-100 text-emerald-800 font-bold text-lg">
@@ -118,7 +120,9 @@ export const FoundersSection: React.FC<FoundersSectionProps> = ({
                     src={companyData.founders[1].image}
                     alt={companyData.founders[1].name}
                     onError={() => setPeterImgErr(true)}
-                    className="w-full h-full object-cover"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
+                    className="w-full h-full object-cover select-none pointer-events-none"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-teal-100 text-teal-800 font-bold text-lg">
@@ -164,7 +168,9 @@ export const FoundersSection: React.FC<FoundersSectionProps> = ({
                 src={companyData.sponsor.profileImage}
                 alt={companyData.sponsor.name}
                 onError={() => setYamilkaImgErr(true)}
-                className="w-full h-full object-cover"
+                draggable={false}
+                onContextMenu={(e) => e.preventDefault()}
+                className="w-full h-full object-cover select-none pointer-events-none"
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center font-bold text-xl text-amber-300">

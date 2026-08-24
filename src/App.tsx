@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   Sparkles,
   ShoppingBag,
@@ -20,6 +20,7 @@ import {
   ShieldCheck,
   Phone,
   Flame,
+  Lock,
 } from 'lucide-react';
 import { Product, ProductCategory, CartItem } from './types';
 import { productsData } from './data/products';
@@ -46,6 +47,77 @@ export default function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
   const [selectedMembershipForModal, setSelectedMembershipForModal] = useState<string>('Membresía HGW');
+  const [showProtectionToast, setShowProtectionToast] = useState(false);
+
+  // Content Protection Handlers
+  useEffect(() => {
+    const triggerProtectionNotice = () => {
+      setShowProtectionToast(true);
+      const timer = setTimeout(() => {
+        setShowProtectionToast(false);
+      }, 2500);
+      return () => clearTimeout(timer);
+    };
+
+    // Prevent context menu (right click)
+    const handleContextMenu = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      // Allow right click ONLY if inside input / textarea
+      if (target.tagName !== 'INPUT' && target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        triggerProtectionNotice();
+      }
+    };
+
+    // Prevent copy on non-inputs
+    const handleCopy = (e: ClipboardEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName !== 'INPUT' && target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        triggerProtectionNotice();
+      }
+    };
+
+    // Prevent cut on non-inputs
+    const handleCut = (e: ClipboardEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName !== 'INPUT' && target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        triggerProtectionNotice();
+      }
+    };
+
+    // Prevent drag of images and media
+    const handleDragStart = (e: DragEvent) => {
+      e.preventDefault();
+      triggerProtectionNotice();
+    };
+
+    // Prevent keyboard shortcuts (Ctrl+C, Ctrl+U, Ctrl+S, Ctrl+P, F12)
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement;
+      const isInput = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA';
+
+      if (!isInput && (e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'C' || e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S' || e.key === 'p' || e.key === 'P')) {
+        e.preventDefault();
+        triggerProtectionNotice();
+      }
+    };
+
+    document.addEventListener('contextmenu', handleContextMenu);
+    document.addEventListener('copy', handleCopy);
+    document.addEventListener('cut', handleCut);
+    document.addEventListener('dragstart', handleDragStart);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+      document.removeEventListener('copy', handleCopy);
+      document.removeEventListener('cut', handleCut);
+      document.removeEventListener('dragstart', handleDragStart);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   // Categories list
   const categories: { id: ProductCategory; label: string; icon?: string }[] = [
@@ -130,7 +202,7 @@ export default function App() {
   const totalCartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-emerald-200 selection:text-emerald-900">
+    <div className="min-h-screen bg-slate-50 text-black flex flex-col font-sans select-none selection:bg-emerald-200 selection:text-black">
       {/* Top Header */}
       <Header
         searchTerm={searchTerm}
@@ -355,6 +427,14 @@ export default function App() {
 
       {/* Floating WhatsApp Button */}
       <FloatingWhatsApp />
+
+      {/* Content Protection Notification Toast */}
+      {showProtectionToast && (
+        <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-black text-white px-5 py-3 rounded-full shadow-2xl flex items-center gap-2.5 text-sm font-semibold border border-white/20 animate-fade-in pointer-events-none">
+          <Lock className="w-4 h-4 text-emerald-400" />
+          <span>Contenido, catálogo e imágenes protegidos contra copiado y descargas.</span>
+        </div>
+      )}
 
       {/* Footer */}
       <Footer

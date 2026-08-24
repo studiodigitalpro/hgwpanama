@@ -222,7 +222,9 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                     <img
                       src={item.product.imageUrl}
                       alt={item.product.name}
-                      className="w-full h-full object-contain"
+                      draggable={false}
+                      onContextMenu={(e) => e.preventDefault()}
+                      className="w-full h-full object-contain select-none pointer-events-none"
                       onError={(e) => {
                         (e.target as HTMLElement).style.display = 'none';
                       }}

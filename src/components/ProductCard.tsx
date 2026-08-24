@@ -137,7 +137,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             src={product.imageUrl}
             alt={product.name}
             onError={() => setImgError(true)}
-            className="absolute inset-0 w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+            draggable={false}
+            onContextMenu={(e) => e.preventDefault()}
+            className="absolute inset-0 w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500 select-none pointer-events-none"
             loading="lazy"
           />
         ) : (
