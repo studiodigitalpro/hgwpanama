@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { Product } from '../types';
 import { companyData } from '../data/companyInfo';
+import { SmartImage } from './SmartImage';
 
 interface ProductCardProps {
   product: Product;
@@ -27,7 +28,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   onOpenDetail,
   onOpenRegistrationModal,
 }) => {
-  const [imgError, setImgError] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
   const [shared, setShared] = useState(false);
 
@@ -132,23 +132,19 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
       {/* Product Image Stage */}
       <div className="relative w-full pt-[85%] bg-gradient-to-b from-slate-50 to-emerald-50/30 overflow-hidden flex items-center justify-center">
-        {!imgError ? (
-          <img
-            src={product.imageUrl}
-            alt={product.name}
-            onError={() => setImgError(true)}
-            draggable={false}
-            onContextMenu={(e) => e.preventDefault()}
-            className="absolute inset-0 w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500 select-none pointer-events-none"
-            loading="lazy"
-          />
-        ) : (
-          <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-slate-100 text-slate-400">
-            <Sparkles className="w-8 h-8 text-emerald-500 mb-1" />
-            <span className="text-xs font-bold text-slate-600 line-clamp-2">{product.name}</span>
-            <span className="text-[10px] text-emerald-600 mt-1 font-semibold">Health Green World</span>
-          </div>
-        )}
+        <SmartImage
+          src={product.imageUrl}
+          alt={product.name}
+          className="absolute inset-0 w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500 select-none pointer-events-none"
+          loading="lazy"
+          fallbackContent={
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center bg-slate-100 text-slate-400">
+              <Sparkles className="w-8 h-8 text-emerald-500 mb-1" />
+              <span className="text-xs font-bold text-slate-600 line-clamp-2">{product.name}</span>
+              <span className="text-[10px] text-emerald-600 mt-1 font-semibold">Health Green World</span>
+            </div>
+          }
+        />
 
         {/* Quick View Hover Indicator */}
         <div className="absolute inset-0 bg-emerald-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -172,7 +168,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             {product.name}
           </h3>
 
-          <p className="text-base text-black line-clamp-2 mt-2 leading-relaxed font-normal">
+          <p className="text-[15px] text-black line-clamp-2 mt-1.5 leading-relaxed font-normal">
             {product.shortDescription}
           </p>
         </div>

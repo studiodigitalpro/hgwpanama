@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   GraduationCap,
   Award,
@@ -12,6 +12,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import { companyData } from '../data/companyInfo';
+import { SmartImage } from './SmartImage';
 
 interface FoundersSectionProps {
   onOpenRegistrationModal: () => void;
@@ -20,10 +21,6 @@ interface FoundersSectionProps {
 export const FoundersSection: React.FC<FoundersSectionProps> = ({
   onOpenRegistrationModal,
 }) => {
-  const [demingImgErr, setDemingImgErr] = useState(false);
-  const [peterImgErr, setPeterImgErr] = useState(false);
-  const [yamilkaImgErr, setYamilkaImgErr] = useState(false);
-
   return (
     <section className="space-y-10" id="empresa-y-fundadores">
       {/* Corporate Overview */}
@@ -68,21 +65,16 @@ export const FoundersSection: React.FC<FoundersSectionProps> = ({
           <div className="space-y-4">
             <div className="flex items-center gap-4">
               <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden bg-slate-100 border-2 border-emerald-200 shrink-0">
-                {!demingImgErr ? (
-                  <img
-                    src={companyData.founders[0].image}
-                    alt={companyData.founders[0].name}
-                    onError={() => setDemingImgErr(true)}
-                    draggable={false}
-                    referrerPolicy="no-referrer"
-                    onContextMenu={(e) => e.preventDefault()}
-                    className="w-full h-full object-cover select-none pointer-events-none"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-emerald-100 text-emerald-800 font-bold text-lg">
-                    DL
-                  </div>
-                )}
+                <SmartImage
+                  src={companyData.founders[0].image}
+                  alt={companyData.founders[0].name}
+                  className="w-full h-full object-cover select-none pointer-events-none"
+                  fallbackContent={
+                    <div className="w-full h-full flex items-center justify-center bg-emerald-100 text-emerald-800 font-bold text-lg">
+                      DL
+                    </div>
+                  }
+                />
               </div>
 
               <div>
@@ -116,21 +108,16 @@ export const FoundersSection: React.FC<FoundersSectionProps> = ({
           <div className="space-y-4">
             <div className="flex items-center gap-4">
               <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden bg-slate-100 border-2 border-teal-200 shrink-0">
-                {!peterImgErr ? (
-                  <img
-                    src={companyData.founders[1].image}
-                    alt={companyData.founders[1].name}
-                    onError={() => setPeterImgErr(true)}
-                    draggable={false}
-                    referrerPolicy="no-referrer"
-                    onContextMenu={(e) => e.preventDefault()}
-                    className="w-full h-full object-cover select-none pointer-events-none"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-teal-100 text-teal-800 font-bold text-lg">
-                    PL
-                  </div>
-                )}
+                <SmartImage
+                  src={companyData.founders[1].image}
+                  alt={companyData.founders[1].name}
+                  className="w-full h-full object-cover select-none pointer-events-none"
+                  fallbackContent={
+                    <div className="w-full h-full flex items-center justify-center bg-teal-100 text-teal-800 font-bold text-lg">
+                      PL
+                    </div>
+                  }
+                />
               </div>
 
               <div>
@@ -165,21 +152,16 @@ export const FoundersSection: React.FC<FoundersSectionProps> = ({
         {/* Sponsor Profile */}
         <div className="md:col-span-7 bg-gradient-to-br from-emerald-800 to-teal-900 rounded-3xl p-6 sm:p-8 text-white shadow-md flex flex-col sm:flex-row items-center gap-6">
           <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden bg-white/10 border-2 border-amber-300 shrink-0 shadow-lg">
-            {!yamilkaImgErr ? (
-              <img
-                src={companyData.sponsor.profileImage}
-                alt={companyData.sponsor.name}
-                onError={() => setYamilkaImgErr(true)}
-                draggable={false}
-                referrerPolicy="no-referrer"
-                onContextMenu={(e) => e.preventDefault()}
-                className="w-full h-full object-cover select-none pointer-events-none"
-              />
-            ) : (
-              <div className="w-full h-full flex items-center justify-center font-bold text-xl text-amber-300">
-                YB
-              </div>
-            )}
+            <SmartImage
+              src={companyData.sponsor.profileImage}
+              alt={companyData.sponsor.name}
+              className="w-full h-full object-cover select-none pointer-events-none"
+              fallbackContent={
+                <div className="w-full h-full flex items-center justify-center font-bold text-xl text-amber-300">
+                  YB
+                </div>
+              }
+            />
           </div>
 
           <div className="space-y-2 text-center sm:text-left flex-1">

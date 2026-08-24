@@ -85,7 +85,7 @@ export const HealthProtocolsSection: React.FC<HealthProtocolsSectionProps> = ({
         <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
           Protocolos de Bienestar y Salud Integral
         </h2>
-        <p className="text-base text-black max-w-3xl mt-1 leading-relaxed">
+        <p className="text-[15px] text-black max-w-3xl mt-1 leading-relaxed">
           Formulaciones de alta biotecnología basadas en extractos de arándanos azules de Canadá, nanotecnología de turmalina, probióticos y hongos medicinales milenarios (Ganoderma & Cordyceps).
         </p>
       </div>
@@ -113,7 +113,7 @@ export const HealthProtocolsSection: React.FC<HealthProtocolsSectionProps> = ({
                   <h3 className="text-lg sm:text-xl font-black text-black">
                     {protocol.title}
                   </h3>
-                  <p className="text-base text-black mt-1.5 leading-relaxed">
+                  <p className="text-[15px] text-black mt-1.5 leading-relaxed">
                     {protocol.description}
                   </p>
                 </div>
@@ -123,7 +123,7 @@ export const HealthProtocolsSection: React.FC<HealthProtocolsSectionProps> = ({
                   <div className="text-xs font-bold text-black uppercase tracking-wider">
                     Puntos Clave del Protocolo:
                   </div>
-                  <ul className="space-y-1.5 text-base text-black">
+                  <ul className="space-y-1.5 text-[15px] text-black">
                     {protocol.keyBenefits.map((kb, idx) => (
                       <li key={idx} className="flex items-start gap-2">
                         <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-1" />

@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { CartItem } from '../types';
 import { companyData } from '../data/companyInfo';
+import { SmartImage } from './SmartImage';
 
 interface CartDrawerProps {
   isOpen: boolean;
@@ -219,15 +220,15 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 <div key={item.product.id} className="pt-3 first:pt-0 flex gap-3 sm:gap-4 items-center">
                   {/* Thumbnail */}
                   <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-slate-50 border border-slate-200 p-1 shrink-0 flex items-center justify-center">
-                    <img
+                    <SmartImage
                       src={item.product.imageUrl}
                       alt={item.product.name}
-                      draggable={false}
-                      onContextMenu={(e) => e.preventDefault()}
                       className="w-full h-full object-contain select-none pointer-events-none"
-                      onError={(e) => {
-                        (e.target as HTMLElement).style.display = 'none';
-                      }}
+                      fallbackContent={
+                        <div className="w-full h-full flex items-center justify-center bg-slate-100 text-slate-400 text-[10px] font-bold text-center">
+                          HGW
+                        </div>
+                      }
                     />
                   </div>
 

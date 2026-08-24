@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { Product } from '../types';
 import { companyData } from '../data/companyInfo';
+import { SmartImage } from './SmartImage';
 
 interface ProductDetailModalProps {
   product: Product | null;
@@ -31,7 +32,6 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   onOpenRegistrationModal,
 }) => {
   const [activeTab, setActiveTab] = useState<'info' | 'benefits' | 'usage'>('info');
-  const [imgError, setImgError] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
   const [shared, setShared] = useState(false);
 
@@ -138,22 +138,18 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           <div className="grid md:grid-cols-12 gap-6 items-start">
             {/* Product Image Stage */}
             <div className="md:col-span-5 bg-gradient-to-b from-slate-50 to-emerald-50/40 rounded-2xl p-4 flex items-center justify-center border border-slate-100 min-h-[220px]">
-              {!imgError ? (
-                <img
-                  src={product.imageUrl}
-                  alt={product.name}
-                  onError={() => setImgError(true)}
-                  draggable={false}
-                  onContextMenu={(e) => e.preventDefault()}
-                  className="max-h-60 max-w-full object-contain drop-shadow-md select-none pointer-events-none"
-                />
-              ) : (
-                <div className="text-center p-6 text-slate-400">
-                  <Sparkles className="w-10 h-10 text-emerald-500 mx-auto mb-2" />
-                  <p className="font-bold text-slate-700 text-sm">{product.name}</p>
-                  <p className="text-xs text-emerald-600 font-semibold">Health Green World</p>
-                </div>
-              )}
+              <SmartImage
+                src={product.imageUrl}
+                alt={product.name}
+                className="max-h-60 max-w-full object-contain drop-shadow-md select-none pointer-events-none"
+                fallbackContent={
+                  <div className="text-center p-6 text-slate-400">
+                    <Sparkles className="w-10 h-10 text-emerald-500 mx-auto mb-2" />
+                    <p className="font-bold text-slate-700 text-sm">{product.name}</p>
+                    <p className="text-xs text-emerald-600 font-semibold">Health Green World</p>
+                  </div>
+                }
+              />
             </div>
 
             {/* Title & Quick Pricing */}
@@ -185,12 +181,12 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 </p>
               )}
 
-              <p className="text-base text-black leading-relaxed">
+              <p className="text-[15px] text-black leading-relaxed">
                 {product.shortDescription}
               </p>
 
               {product.presentation && (
-                <div className="inline-flex items-center gap-2 text-sm text-black bg-slate-100 px-3.5 py-1.5 rounded-xl border border-slate-200 font-medium">
+                <div className="inline-flex items-center gap-2 text-[14px] text-black bg-slate-100 px-3.5 py-1.5 rounded-xl border border-slate-200 font-medium">
                   <Package className="w-4 h-4 text-emerald-600" />
                   <span className="font-bold text-black">Presentación:</span> {product.presentation}
                 </div>
@@ -295,7 +291,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   <CheckCircle2 className="w-5 h-5 text-emerald-600" /> Ventajas Principales:
                 </h4>
                 {product.advantages && product.advantages.length > 0 ? (
-                  <ul className="grid sm:grid-cols-2 gap-2.5 text-base text-black">
+                  <ul className="grid sm:grid-cols-2 gap-2.5 text-[15px] text-black">
                     {product.advantages.map((adv, idx) => (
                       <li
                         key={idx}
@@ -307,7 +303,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     ))}
                   </ul>
                 ) : (
-                  <p className="text-base text-black leading-relaxed">{product.shortDescription}</p>
+                  <p className="text-[15px] text-black leading-relaxed">{product.shortDescription}</p>
                 )}
               </div>
             )}
@@ -317,14 +313,14 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 <h4 className="font-bold text-base text-black flex items-center gap-1.5">
                   <HeartHandshake className="w-5 h-5 text-emerald-600" /> Acción & Beneficios:
                 </h4>
-                <div className="grid sm:grid-cols-2 gap-3 text-base">
+                <div className="grid sm:grid-cols-2 gap-3 text-[15px]">
                   {product.benefits.map((b, idx) => (
                     <div
                       key={idx}
                       className="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-100 space-y-1.5"
                     >
                       <div className="font-bold text-black text-base">{b.title}</div>
-                      <p className="text-black text-base leading-relaxed">{b.description}</p>
+                      <p className="text-black text-[15px] leading-relaxed">{b.description}</p>
                     </div>
                   ))}
                 </div>
@@ -332,13 +328,13 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             )}
 
             {activeTab === 'usage' && (
-              <div className="space-y-4 text-base">
+              <div className="space-y-4 text-[15px]">
                 {product.ingredients && product.ingredients.length > 0 && (
                   <div className="space-y-2 bg-gradient-to-br from-emerald-50/50 to-teal-50/30 p-4 rounded-2xl border border-emerald-100">
                     <h4 className="font-bold text-black flex items-center gap-1.5 text-base">
                       <Sparkles className="w-5 h-5 text-emerald-600" /> Ingredientes & Composición:
                     </h4>
-                    <ul className="grid sm:grid-cols-2 gap-2.5 text-base text-black mt-2">
+                    <ul className="grid sm:grid-cols-2 gap-2.5 text-[15px] text-black mt-2">
                       {product.ingredients.map((ing, idx) => (
                         <li
                           key={idx}
@@ -357,7 +353,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     <h4 className="font-bold text-black flex items-center gap-1.5 text-base">
                       <CheckCircle2 className="w-5 h-5 text-emerald-600" /> Modo de Empleo Recomendado:
                     </h4>
-                    <ol className="list-decimal list-inside space-y-2 text-black bg-slate-50 p-4 rounded-xl border border-slate-200 text-base">
+                    <ol className="list-decimal list-inside space-y-2 text-black bg-slate-50 p-4 rounded-xl border border-slate-200 text-[15px]">
                       {product.usageInstructions.map((step, idx) => (
                         <li key={idx} className="leading-relaxed text-black">
                           {step}
