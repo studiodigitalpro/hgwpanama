@@ -74,6 +74,7 @@ export const FoundersSection: React.FC<FoundersSectionProps> = ({
                     alt={companyData.founders[0].name}
                     onError={() => setDemingImgErr(true)}
                     draggable={false}
+                    referrerPolicy="no-referrer"
                     onContextMenu={(e) => e.preventDefault()}
                     className="w-full h-full object-cover select-none pointer-events-none"
                   />
@@ -121,6 +122,7 @@ export const FoundersSection: React.FC<FoundersSectionProps> = ({
                     alt={companyData.founders[1].name}
                     onError={() => setPeterImgErr(true)}
                     draggable={false}
+                    referrerPolicy="no-referrer"
                     onContextMenu={(e) => e.preventDefault()}
                     className="w-full h-full object-cover select-none pointer-events-none"
                   />
@@ -169,6 +171,7 @@ export const FoundersSection: React.FC<FoundersSectionProps> = ({
                 alt={companyData.sponsor.name}
                 onError={() => setYamilkaImgErr(true)}
                 draggable={false}
+                referrerPolicy="no-referrer"
                 onContextMenu={(e) => e.preventDefault()}
                 className="w-full h-full object-cover select-none pointer-events-none"
               />

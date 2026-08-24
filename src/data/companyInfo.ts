@@ -21,13 +21,13 @@ export const companyData = {
     videoTutorialUrl: 'https://www.youtube.com/embed/cR-aHkU9N4A',
     videoTutorialDirect: 'https://www.youtube.com/watch?v=cR-aHkU9N4A&t=5s',
     academyUrl: 'https://academiahgw.online',
-    profileImage: 'https://hgwpanama.com/wp-content/uploads/Foto-de-perfil-Yamilka-Batista-HGW.png',
+    profileImage: 'https://lh3.googleusercontent.com/d/1KeOPcyuhctKp1qJsNsfw-nlUuXzyU_hf',
   },
   founders: [
     {
       name: 'Dra. Deming Li',
       title: 'Presidente de Green World Group',
-      image: 'https://hgwpanama.com/wp-content/uploads/2026/08/HGW-Dr.-Deming-Li-Presidente-de-Green-World-Group.webp',
+      image: 'https://lh3.googleusercontent.com/d/1ECNGtx5tWWd-gZXqwRocziXkBdJipyx9',
       credentials: [
         'Doctorado en Biología en la Universidad Cornell, EE.UU.',
         'Doctorado en la Universidad de Wisconsin, EE.UU.',
@@ -39,7 +39,7 @@ export const companyData = {
     {
       name: 'Mr. Peter Li',
       title: 'Vicepresidente Global Green World Group & CEO Región Latinoamérica',
-      image: 'https://hgwpanama.com/wp-content/uploads/2026/08/HGW-Peter-Li.webp',
+      image: 'https://lh3.googleusercontent.com/d/1s332KyXrR0-SCivwh_cAgdVJfmSRYGnj',
       credentials: [
         'Más de 18 años de experiencia internacional en Mercadeo en Red.',
         'Egresado de la Universidad en Ciencias Políticas y Derecho.',
