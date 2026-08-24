@@ -55,8 +55,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       text += `📦 *Presentación:* ${product.presentation}\n`;
     }
     text += `\n📝 *Detalles:* ${product.shortDescription}\n\n`;
+    if (product.ingredients && product.ingredients.length > 0) {
+      text += `🧪 *Ingredientes / Composición:*\n${product.ingredients.slice(0, 4).map((ing) => `• ${ing}`).join('\n')}\n\n`;
+    }
     if (product.benefits && product.benefits.length > 0) {
-      text += `✨ *Beneficios clave:*\n${product.benefits.slice(0, 3).map((b) => `• ${b}`).join('\n')}\n\n`;
+      text += `✨ *Beneficios clave:*\n${product.benefits
+        .slice(0, 3)
+        .map((b) => (typeof b === 'string' ? `• ${b}` : `• *${b.title}:* ${b.description}`))
+        .join('\n')}\n\n`;
     }
     text += `📲 *Para consultas o pedidos en Panamá con Yamilka Batista:*\nhttps://wa.me/50767788375\n\n`;
     text += `🌟 *Membresía con 30% a 60% desc (Patrocinador Yamilka507):*\nhttps://www.healthgreenworld.com/?userName=Yamilka507`;

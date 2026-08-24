@@ -69,8 +69,13 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
       text += `📦 *Presentación:* ${product.presentation}\n`;
     }
     text += `\n📝 *Descripción:* ${product.shortDescription}\n\n`;
+    if (product.ingredients && product.ingredients.length > 0) {
+      text += `🧪 *Ingredientes y Componentes:*\n${product.ingredients.map((ing) => `• ${ing}`).join('\n')}\n\n`;
+    }
     if (product.benefits && product.benefits.length > 0) {
-      text += `✨ *Beneficios destacados:*\n${product.benefits.map((b) => `• ${b}`).join('\n')}\n\n`;
+      text += `✨ *Beneficios destacados:*\n${product.benefits
+        .map((b) => (typeof b === 'string' ? `• ${b}` : `• *${b.title}:* ${b.description}`))
+        .join('\n')}\n\n`;
     }
     text += `📲 *Para pedidos y asesoría personalizada en Panamá con Yamilka Batista:*\nhttps://wa.me/50767788375\n\n`;
     text += `🌐 *Registro oficial como Socio con 30% a 60% desc (Patrocinador Yamilka507):*\nhttps://www.healthgreenworld.com/?userName=Yamilka507`;
@@ -275,7 +280,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     : 'border-transparent text-slate-500 hover:text-slate-800'
                 }`}
               >
-                <Layers className="w-4 h-4" /> Modo de Uso & Detalles
+                <Layers className="w-4 h-4" /> Uso & Ingredientes
               </button>
             )}
           </div>
@@ -326,25 +331,37 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
             {activeTab === 'usage' && (
               <div className="space-y-4 text-xs sm:text-sm">
-                {product.usageInstructions && (
+                {product.ingredients && product.ingredients.length > 0 && (
+                  <div className="space-y-2 bg-gradient-to-br from-emerald-50/50 to-teal-50/30 p-3.5 rounded-2xl border border-emerald-100">
+                    <h4 className="font-bold text-emerald-950 flex items-center gap-1.5 text-sm">
+                      <Sparkles className="w-4 h-4 text-emerald-600" /> Ingredientes & Composición:
+                    </h4>
+                    <ul className="grid sm:grid-cols-2 gap-2 text-xs text-slate-700 mt-2">
+                      {product.ingredients.map((ing, idx) => (
+                        <li
+                          key={idx}
+                          className="bg-white/90 p-2 rounded-xl border border-emerald-100/70 flex items-start gap-1.5 shadow-2xs"
+                        >
+                          <span className="text-emerald-600 font-bold text-xs mt-0.5">✓</span>
+                          <span className="font-medium text-slate-800">{ing}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {product.usageInstructions && product.usageInstructions.length > 0 && (
                   <div className="space-y-2">
-                    <h4 className="font-bold text-slate-900">Modo de Empleo Recomendado:</h4>
-                    <ol className="list-decimal list-inside space-y-1 text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200">
+                    <h4 className="font-bold text-slate-900 flex items-center gap-1.5 text-sm">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Modo de Empleo Recomendado:
+                    </h4>
+                    <ol className="list-decimal list-inside space-y-1.5 text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200">
                       {product.usageInstructions.map((step, idx) => (
                         <li key={idx} className="leading-relaxed">
                           {step}
                         </li>
                       ))}
                     </ol>
-                  </div>
-                )}
-
-                {product.ingredients && product.ingredients.length > 0 && (
-                  <div className="space-y-1">
-                    <h4 className="font-bold text-slate-900">Ingredientes Principales:</h4>
-                    <p className="text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
-                      {product.ingredients.join(', ')}
-                    </p>
                   </div>
                 )}
               </div>
