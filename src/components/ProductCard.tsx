@@ -168,11 +168,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             </div>
           )}
 
-          <h3 className="font-bold text-slate-900 text-sm sm:text-base leading-snug group-hover:text-emerald-700 transition-colors line-clamp-2">
+          <h3 className="font-bold text-black text-base sm:text-lg leading-snug group-hover:text-emerald-700 transition-colors line-clamp-2">
             {product.name}
           </h3>
 
-          <p className="text-xs text-slate-500 line-clamp-2 mt-1.5 leading-relaxed">
+          <p className="text-base text-black line-clamp-2 mt-2 leading-relaxed font-normal">
             {product.shortDescription}
           </p>
         </div>
@@ -180,13 +180,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         {/* Price & Action Area */}
         <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
           <div>
-            <div className="text-[10px] text-slate-400 font-medium">
+            <div className="text-xs text-slate-600 font-medium">
               {isMembership ? 'Inversión desde' : 'Precio al Público'}
             </div>
             <div className="flex items-baseline gap-1.5">
-              <span className="text-base sm:text-lg font-black text-slate-900">
+              <span className="text-base sm:text-lg font-black text-black">
                 ${product.price.toFixed(2)}{' '}
-                <span className="text-[11px] font-normal text-slate-500">USD</span>
+                <span className="text-xs font-semibold text-slate-700">USD</span>
               </span>
               {product.regularPrice && product.regularPrice > product.price && (
                 <span className="text-xs text-slate-400 line-through">
@@ -195,7 +195,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               )}
             </div>
             {!isMembership && (
-              <div className="text-[10px] text-teal-700 font-semibold" title="Precio para socios afiliados con compra inicial mínima de 50 BV">
+              <div className="text-xs text-teal-800 font-bold" title="Precio para socios afiliados con compra inicial mínima de 50 BV">
                 Socio: ${(product.price * 0.7).toFixed(2)} (-30%)
               </div>
             )}

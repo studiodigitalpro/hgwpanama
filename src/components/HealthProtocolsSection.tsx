@@ -85,7 +85,7 @@ export const HealthProtocolsSection: React.FC<HealthProtocolsSectionProps> = ({
         <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
           Protocolos de Bienestar y Salud Integral
         </h2>
-        <p className="text-xs sm:text-sm text-slate-500 max-w-3xl mt-1">
+        <p className="text-base text-black max-w-3xl mt-1 leading-relaxed">
           Formulaciones de alta biotecnología basadas en extractos de arándanos azules de Canadá, nanotecnología de turmalina, probióticos y hongos medicinales milenarios (Ganoderma & Cordyceps).
         </p>
       </div>
@@ -110,24 +110,24 @@ export const HealthProtocolsSection: React.FC<HealthProtocolsSectionProps> = ({
                 </div>
 
                 <div>
-                  <h3 className="text-lg sm:text-xl font-black text-slate-900">
+                  <h3 className="text-lg sm:text-xl font-black text-black">
                     {protocol.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+                  <p className="text-base text-black mt-1.5 leading-relaxed">
                     {protocol.description}
                   </p>
                 </div>
 
                 {/* Key Benefits */}
-                <div className="space-y-1.5 pt-2">
-                  <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+                <div className="space-y-2 pt-2">
+                  <div className="text-xs font-bold text-black uppercase tracking-wider">
                     Puntos Clave del Protocolo:
                   </div>
-                  <ul className="space-y-1 text-xs text-slate-700">
+                  <ul className="space-y-1.5 text-base text-black">
                     {protocol.keyBenefits.map((kb, idx) => (
-                      <li key={idx} className="flex items-start gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700 shrink-0 mt-0.5" />
-                        <span>{kb}</span>
+                      <li key={idx} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-1" />
+                        <span className="text-black leading-relaxed">{kb}</span>
                       </li>
                     ))}
                   </ul>

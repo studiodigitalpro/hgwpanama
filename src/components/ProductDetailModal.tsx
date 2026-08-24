@@ -185,14 +185,14 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 </p>
               )}
 
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-base text-black leading-relaxed">
                 {product.shortDescription}
               </p>
 
               {product.presentation && (
-                <div className="inline-flex items-center gap-1.5 text-xs text-slate-700 bg-slate-100 px-3 py-1.5 rounded-xl border border-slate-200">
-                  <Package className="w-3.5 h-3.5 text-emerald-600" />
-                  <span className="font-semibold">Presentación:</span> {product.presentation}
+                <div className="inline-flex items-center gap-2 text-sm text-black bg-slate-100 px-3.5 py-1.5 rounded-xl border border-slate-200 font-medium">
+                  <Package className="w-4 h-4 text-emerald-600" />
+                  <span className="font-bold text-black">Presentación:</span> {product.presentation}
                 </div>
               )}
 
@@ -291,40 +291,40 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           <div className="space-y-4">
             {activeTab === 'info' && (
               <div className="space-y-3">
-                <h4 className="font-bold text-sm text-slate-900 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Ventajas Principales:
+                <h4 className="font-bold text-base text-black flex items-center gap-1.5">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-600" /> Ventajas Principales:
                 </h4>
                 {product.advantages && product.advantages.length > 0 ? (
-                  <ul className="grid sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-700">
+                  <ul className="grid sm:grid-cols-2 gap-2.5 text-base text-black">
                     {product.advantages.map((adv, idx) => (
                       <li
                         key={idx}
-                        className="bg-slate-50 p-2.5 rounded-xl border border-slate-100 flex items-start gap-2"
+                        className="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-start gap-2.5"
                       >
-                        <span className="text-emerald-600 font-bold">•</span>
-                        <span>{adv}</span>
+                        <span className="text-emerald-600 font-bold text-lg leading-none">•</span>
+                        <span className="text-black leading-relaxed">{adv}</span>
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  <p className="text-xs text-slate-600">{product.shortDescription}</p>
+                  <p className="text-base text-black leading-relaxed">{product.shortDescription}</p>
                 )}
               </div>
             )}
 
             {activeTab === 'benefits' && product.benefits && (
               <div className="space-y-3">
-                <h4 className="font-bold text-sm text-slate-900 flex items-center gap-1.5">
-                  <HeartHandshake className="w-4 h-4 text-emerald-600" /> Acción & Beneficios:
+                <h4 className="font-bold text-base text-black flex items-center gap-1.5">
+                  <HeartHandshake className="w-5 h-5 text-emerald-600" /> Acción & Beneficios:
                 </h4>
-                <div className="grid sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+                <div className="grid sm:grid-cols-2 gap-3 text-base">
                   {product.benefits.map((b, idx) => (
                     <div
                       key={idx}
-                      className="bg-emerald-50/60 p-3 rounded-xl border border-emerald-100 space-y-1"
+                      className="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-100 space-y-1.5"
                     >
-                      <div className="font-bold text-emerald-950">{b.title}</div>
-                      <p className="text-slate-600 text-xs leading-relaxed">{b.description}</p>
+                      <div className="font-bold text-black text-base">{b.title}</div>
+                      <p className="text-black text-base leading-relaxed">{b.description}</p>
                     </div>
                   ))}
                 </div>
@@ -332,20 +332,20 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             )}
 
             {activeTab === 'usage' && (
-              <div className="space-y-4 text-xs sm:text-sm">
+              <div className="space-y-4 text-base">
                 {product.ingredients && product.ingredients.length > 0 && (
-                  <div className="space-y-2 bg-gradient-to-br from-emerald-50/50 to-teal-50/30 p-3.5 rounded-2xl border border-emerald-100">
-                    <h4 className="font-bold text-emerald-950 flex items-center gap-1.5 text-sm">
-                      <Sparkles className="w-4 h-4 text-emerald-600" /> Ingredientes & Composición:
+                  <div className="space-y-2 bg-gradient-to-br from-emerald-50/50 to-teal-50/30 p-4 rounded-2xl border border-emerald-100">
+                    <h4 className="font-bold text-black flex items-center gap-1.5 text-base">
+                      <Sparkles className="w-5 h-5 text-emerald-600" /> Ingredientes & Composición:
                     </h4>
-                    <ul className="grid sm:grid-cols-2 gap-2 text-xs text-slate-700 mt-2">
+                    <ul className="grid sm:grid-cols-2 gap-2.5 text-base text-black mt-2">
                       {product.ingredients.map((ing, idx) => (
                         <li
                           key={idx}
-                          className="bg-white/90 p-2 rounded-xl border border-emerald-100/70 flex items-start gap-1.5 shadow-2xs"
+                          className="bg-white/90 p-2.5 rounded-xl border border-emerald-100/70 flex items-start gap-2 shadow-2xs"
                         >
-                          <span className="text-emerald-600 font-bold text-xs mt-0.5">✓</span>
-                          <span className="font-medium text-slate-800">{ing}</span>
+                          <span className="text-emerald-600 font-bold text-sm mt-0.5">✓</span>
+                          <span className="font-medium text-black leading-relaxed">{ing}</span>
                         </li>
                       ))}
                     </ul>
@@ -354,12 +354,12 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
                 {product.usageInstructions && product.usageInstructions.length > 0 && (
                   <div className="space-y-2">
-                    <h4 className="font-bold text-slate-900 flex items-center gap-1.5 text-sm">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Modo de Empleo Recomendado:
+                    <h4 className="font-bold text-black flex items-center gap-1.5 text-base">
+                      <CheckCircle2 className="w-5 h-5 text-emerald-600" /> Modo de Empleo Recomendado:
                     </h4>
-                    <ol className="list-decimal list-inside space-y-1.5 text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200">
+                    <ol className="list-decimal list-inside space-y-2 text-black bg-slate-50 p-4 rounded-xl border border-slate-200 text-base">
                       {product.usageInstructions.map((step, idx) => (
-                        <li key={idx} className="leading-relaxed">
+                        <li key={idx} className="leading-relaxed text-black">
                           {step}
                         </li>
                       ))}
